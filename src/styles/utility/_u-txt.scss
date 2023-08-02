@@ -1,0 +1,80 @@
+@use "../settings" as setting;
+
+@mixin txtSize() {
+  @each $key, $name in setting.$font-size {
+    @if $key == s or $key == m or $key == l {
+      .u-txt-size-#{$key} {
+        font-size: $name;
+      }
+    }
+  }
+}
+
+@mixin txtWeight() {
+  @each $key, $name in setting.$font-weight {
+    @if $key == m or $key == b {
+      .u-txt-weight-#{$key} {
+        font-weight: $name;
+      }
+    }
+  }
+}
+
+@mixin lineHeight() {
+  @each $key, $name in setting.$line-height {
+    @if $key != reset {
+      .u-line-height-#{$key} {
+        line-height: $name;
+      }
+    }
+  }
+}
+
+@include txtSize;
+@include txtWeight;
+@include lineHeight;
+
+.u-font-en {
+  font-family: setting.$font-family-en;
+}
+
+.u-font-en-con {
+  font-family: setting.$font-family-en-condensed;
+}
+
+.u-txt-dimmed {
+  color: var(--c-dimmed);
+}
+
+.u-txt-brand {
+  color: setting.brandcolor(base);
+}
+
+.u-txt-accent {
+  color: setting.$danger;
+}
+
+.u-txt-alert {
+  color: setting.$warning;
+}
+
+.u-txt-center {
+  text-align: center;
+}
+
+.u-txt-right {
+  text-align: right;
+}
+
+.u-txt-break {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.u-txt-underline {
+  text-decoration: underline;
+  text-decoration-thickness: 0.5em;
+  text-decoration-color: rgba(setting.$warning, 0.4);
+  text-underline-offset: -0.2em;
+  text-decoration-skip-ink: none;
+}

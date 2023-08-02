@@ -1,0 +1,8 @@
+@use "../settings" as setting;
+
+.o-container {
+  box-sizing: content-box;
+  padding: 0 setting.spaces(n);
+  margin-right: auto;
+  margin-left: auto;
+}

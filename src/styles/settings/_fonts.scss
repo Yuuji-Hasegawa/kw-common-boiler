@@ -1,0 +1,123 @@
+@use "sass:map";
+
+@function fontsize($key) {
+  @return map.get($font-size, $key);
+}
+
+$font-size: (
+  s: 1rem * 0.875,
+  n: 1rem,
+  m: 1rem * 1.125,
+  l: 1rem * 1.8,
+  ll: 1rem * 3.5,
+  lll: 1rem * 4.7,
+) !default;
+
+@function fontweight($key) {
+  @return map.get($font-weight, $key);
+}
+
+$font-weight: (
+  n: 400,
+  m: 500,
+  b: 700,
+  bb: 900,
+) !default;
+
+@function lineheight($key) {
+  @return map.get($line-height, $key);
+}
+
+$line-height: (
+  reset: 1.5,
+  heading: 1.3,
+  content: 1.68,
+) !default;
+$font-family: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Hiragino Sans", "Noto Sans CJK JP",
+  "Original Yu Gothic", "Yu Gothic", sans-serif;
+$font-family-en: "OpenSans", sans-serif;
+$font-family-en-condensed: "OpenSans Condensed", sans-serif;
+
+/*!
+ * OpenSans is licensed under the SIL Open Font License, Version 1.1.
+ * http://scripts.sil.org/OFL
+ * I have converted my OpenSans font(https://fonts.google.com/specimen/OpenSans) from ttf to woff2.
+ */
+
+@font-face {
+  font-family: "Original Yu Gothic";
+  font-weight: 100;
+  src: local("Yu Gothic Medium");
+}
+
+@font-face {
+  font-family: "Original Yu Gothic";
+  font-weight: 200;
+  src: local("Yu Gothic Medium");
+}
+
+@font-face {
+  font-family: "Original Yu Gothic";
+  font-weight: 300;
+  src: local("Yu Gothic Medium");
+}
+
+@font-face {
+  font-family: "Original Yu Gothic";
+  font-weight: 400;
+  src: local("Yu Gothic Medium");
+}
+
+@font-face {
+  font-family: "Original Yu Gothic";
+  font-weight: bold;
+  src: local("Yu Gothic Bold");
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-style: normal;
+  font-weight: 400;
+  src: url("/public/fonts/OpenSans-Regular.woff2") format("woff2");
+  font-display: optional;
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-style: normal;
+  font-weight: 500;
+  src: url("/public/fonts/OpenSans-Medium.woff2") format("woff2");
+  font-display: optional;
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-style: normal;
+  font-weight: 700;
+  src: url("/public/fonts/OpenSans-Bold.woff2") format("woff2");
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "OpenSans Condensed";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/public/fonts/OpenSans_Condensed-Regular.woff2") format("woff2");
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "OpenSans Condensed";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/public/fonts/OpenSans_Condensed-Medium.woff2") format("woff2");
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "OpenSans Condensed";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/public/fonts/OpenSans_Condensed-Bold.woff2") format("woff2");
+  font-display: optional;
+}

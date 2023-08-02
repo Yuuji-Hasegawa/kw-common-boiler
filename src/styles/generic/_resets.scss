@@ -1,0 +1,87 @@
+@use "../settings" as setting;
+@use "../tools" as tool;
+
+*:where(:not(iframe, canvas, img, svg, video, svg *)) {
+  all: unset;
+  display: revert;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
+:root {
+  @each $key, $name in setting.$light-colors {
+    --c-#{$key}: #{($name)};
+  }
+
+  @include tool.darkmode {
+    @each $key, $name in setting.$dark-colors {
+      --c-#{$key}: #{($name)};
+    }
+  }
+
+  font-family: setting.$font-family;
+  font-size: setting.fontsize(n);
+  font-weight: setting.fontweight(n);
+  font-feature-settings: "pkna";
+  line-height: setting.lineheight(reset);
+  color: var(--c-txt);
+  color-scheme: light dark;
+  background-color: var(--c-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  font-synthesis: none;
+  text-rendering: optimizelegibility;
+}
+
+body {
+  min-height: 100vh;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+p {
+  & + * {
+    margin-top: setting.spaces(m);
+  }
+}
+
+b,
+strong {
+  font-weight: setting.fontweight(b);
+}
+
+small {
+  font-size: setting.fontsize(s);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+svg {
+  box-sizing: content-box;
+  flex-shrink: 0;
+  width: auto;
+  height: 1em;
+  vertical-align: -0.125em;
+}
+
+details > summary {
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}

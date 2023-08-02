@@ -1,0 +1,14 @@
+@use "../settings" as setting;
+
+.o-cluster {
+  display: flex;
+  flex-wrap: wrap;
+
+  @each $key, $name in setting.$spaces {
+    @if $key == n or $key == m {
+      &--#{$key} {
+        gap: $name;
+      }
+    }
+  }
+}

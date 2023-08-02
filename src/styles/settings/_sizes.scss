@@ -1,0 +1,32 @@
+@use "sass:map";
+@use "sass:math";
+
+@function width($key) {
+  @return map.get($sizes, $key);
+}
+
+$font: 16px;
+$wrap: 70;
+$content: 40;
+$sizes: (
+  content: math.round($font * $content),
+  wrapper: math.round($font * $wrap),
+) !default;
+$base: 24px;
+$ratio: 1.618;
+
+@function spaces($key) {
+  @return map.get($spaces, $key);
+}
+
+$spaces: (
+  ssss: math.round(math.div(math.div(math.div(math.div($base, $ratio), $ratio), $ratio), $ratio)),
+  sss: math.round(math.div(math.div(math.div($base, $ratio), $ratio), $ratio)),
+  ss: math.round(math.div(math.div($base, $ratio), $ratio)),
+  s: math.round(math.div($base, $ratio)),
+  n: 16px,
+  m: $base,
+  l: math.round($base * $ratio),
+  ll: math.round($base * $ratio * $ratio),
+  lll: math.round($base * $ratio * $ratio * $ratio),
+) !default;

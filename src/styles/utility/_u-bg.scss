@@ -1,0 +1,13 @@
+@use "../settings" as setting;
+
+.u-bg-base {
+  background-color: var(--c-bg);
+}
+
+.u-bg-overlay {
+  background-color: var(--c-overlay);
+}
+
+.u-bg-brand {
+  background-color: setting.brandcolor(base);
+}

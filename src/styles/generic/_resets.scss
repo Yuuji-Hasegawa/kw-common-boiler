@@ -70,6 +70,11 @@ img {
   vertical-align: top;
 }
 
+a,
+button {
+  cursor: pointer;
+}
+
 svg {
   box-sizing: content-box;
   flex-shrink: 0;

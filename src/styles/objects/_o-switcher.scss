@@ -1,0 +1,15 @@
+@use "../settings" as setting;
+
+.o-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: setting.spaces(m) setting.spaces(n);
+
+  @each $key, $name in setting.$spaces {
+    @if $key == ss or $key == s or $key == m {
+      &--#{$key} {
+        column-gap: $name;
+      }
+    }
+  }
+}

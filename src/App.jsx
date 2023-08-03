@@ -3,7 +3,9 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.scss";
 import "./styles/style.scss";
-//import Pager from "./components/pager.jsx";
+import { Pager } from "./components/pager.jsx";
+import { NewsList } from "./components/NewsList.jsx";
+import { Switch } from "./components/Switch.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,6 +19,9 @@ function App() {
         <div>d</div>
         <div>e</div>
       </div>
+      <Pager />
+      <NewsList />
+      <Switch />
       <picture className="o-frame o-frame--with-border">
         <source type="image/avif" srcSet="img/thumb.avif" />
         <source type="image/webp" srcSet="img/thumb.webp" />

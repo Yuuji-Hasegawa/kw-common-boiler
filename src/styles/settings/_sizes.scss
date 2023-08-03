@@ -30,3 +30,22 @@ $spaces: (
   ll: math.round($base * $ratio * $ratio),
   lll: math.round($base * $ratio * $ratio * $ratio),
 ) !default;
+$breaks: 576px;
+$breakm: 768px;
+$breakl: 992px;
+$unders: $breaks - 1px;
+$underm: $breakm - 1px;
+$underl: $breakl - 1px;
+
+@function breakpoints($key) {
+  @return map.get($breakpoints, $key);
+}
+
+$breakpoints: (
+  unders: calc(($unders - 100vw) * 999),
+  underm: calc(($underm - 100vw) * 999),
+  underl: calc(($underl - 100vw) * 999),
+  overs: calc((100vw - $breaks) * 999),
+  overm: calc((100vw - $breakm) * 999),
+  overl: calc((100vw - $breakl) * 999),
+) !default;

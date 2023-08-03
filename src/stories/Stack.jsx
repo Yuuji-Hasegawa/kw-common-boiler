@@ -21,7 +21,7 @@ Stack.propTypes = {
    * 縦積みにした時の隙間。<br />
    * styles/settings/_sizes.scss 内の $spaces と連動。
    */
-  size: PropTypes.oneOf(["ssss","sss","ss","s","n","m","l","ll","lll"]),
+  size: PropTypes.oneOf(["ssss", "sss", "ss", "s", "n", "m", "l", "ll", "lll"]),
 };
 
 Stack.defaultProps = {

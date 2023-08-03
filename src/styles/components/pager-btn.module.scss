@@ -1,13 +1,9 @@
 @use "../settings" as setting;
 
-/*
-.o-cluster {
-  &--pager {
-    gap: setting.spaces(ss);
-    justify-content: center;
-  }
+.pager {
+  gap: setting.spaces(ss);
+  justify-content: center;
 }
-*/
 
 .btn {
   display: flex;
@@ -20,7 +16,6 @@
   font-weight: setting.fontweight(b);
   line-height: 1;
   color: var(--c-txt);
-  cursor: pointer;
   background: var(--c-bg);
   border: solid 1px var(--c-txt);
   transition: border-color 0.25s ease;

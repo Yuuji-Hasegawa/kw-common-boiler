@@ -1,0 +1,17 @@
+@use "../settings" as setting;
+
+.link {
+  flex-basis: setting.breakpoints(unders);
+  flex-grow: 1;
+  text-align: left;
+  text-decoration: underline;
+
+  &:visited {
+    color: var(--c-dimmed);
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}

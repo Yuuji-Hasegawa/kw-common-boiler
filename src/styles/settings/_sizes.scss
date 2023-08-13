@@ -6,11 +6,18 @@
 }
 
 $contentWrapper: 40em;
+$borderRadiusBase: 8px;
+$borderRadiusRatio: 1.618;
 $borderRadius: (
-  s: 4px,
-  m: 8px,
-  l: 12px,
+  s: math.div($borderRadiusBase, $borderRadiusRatio),
+  m: $borderRadiusBase * 1,
+  l: $borderRadiusBase * 2,
 ) !default;
+
+@function borderRadius($key) {
+  @return map.get($borderRadius, $key);
+}
+
 $font: 16px;
 $wrap: 70;
 $content: 40;

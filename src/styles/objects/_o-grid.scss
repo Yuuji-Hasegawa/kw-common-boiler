@@ -9,9 +9,9 @@
       auto-fit,
       minmax(
         clamp(
-          clamp((100% - setting.spacepx(m) * 2) / 3, setting.breakpoints(underm), (50% - setting.spacepx(m) * 0.5)),
+          clamp((100% - setting.spacePx(m) * 2) / 3, setting.breakpoints(underm), (50% - setting.spacePx(m) * 0.5)),
           setting.breakpoints(underm),
-          clamp((50% - setting.spacepx(m) * 0.5), setting.breakpoints(unders), 100%)
+          clamp((50% - setting.spacePx(m) * 0.5), setting.breakpoints(unders), 100%)
         ),
         1fr
       )
@@ -23,9 +23,9 @@
       auto-fit,
       minmax(
         clamp(
-          clamp((100% - setting.spacepx(m) * 3) / 4, setting.breakpoints(underm), (50% - setting.spacepx(m) * 0.5)),
+          clamp((100% - setting.spacePx(m) * 3) / 4, setting.breakpoints(underm), (50% - setting.spacePx(m) * 0.5)),
           setting.breakpoints(underm),
-          clamp((50% - setting.spacepx(m) * 0.5), setting.breakpoints(unders), 100%)
+          clamp((50% - setting.spacePx(m) * 0.5), setting.breakpoints(unders), 100%)
         ),
         1fr
       )

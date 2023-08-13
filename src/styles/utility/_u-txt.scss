@@ -47,7 +47,7 @@
 }
 
 .u-txt-brand {
-  color: setting.brandcolor(base);
+  color: var(--c-primary);
 }
 
 .u-txt-accent {

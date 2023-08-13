@@ -26,6 +26,6 @@
 
   &:hover,
   &:focus {
-    border-color: setting.brandcolor(base);
+    border-color: var(--c-primary);
   }
 }

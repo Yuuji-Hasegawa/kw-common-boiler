@@ -2,12 +2,12 @@
 
 .o-center {
   box-sizing: content-box;
-  padding-right: setting.spacePx(m);
-  padding-left: setting.spacePx(m);
+  padding-right: clamp(clamp(setting.spacePx(m),setting.breakpoints(overm),setting.spacePx(xl)),setting.breakpoints(overs),clamp(setting.spacePx(xl),setting.breakpoints(overm),setting.spacePx(3xl)));
+  padding-left: clamp(clamp(setting.spacePx(m),setting.breakpoints(overm),setting.spacePx(xl)),setting.breakpoints(overs),clamp(setting.spacePx(xl),setting.breakpoints(overm),setting.spacePx(3xl)));
   margin-right: auto;
   margin-left: auto;
 
-  &__content {
+  &--content {
     max-width: setting.$contentWrapper;
   }
 }

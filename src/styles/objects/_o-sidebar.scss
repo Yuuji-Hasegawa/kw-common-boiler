@@ -3,7 +3,10 @@
 .o-sidebar {
   display: flex;
   flex-wrap: wrap;
-  gap: setting.spacePx(l) setting.spacePx(m);
+  gap: setting.spacePx(l);
+  &--gapL {
+    gap: setting.spacePx(xl)
+  }
 
   &__narrow {
     flex-basis: 35%;

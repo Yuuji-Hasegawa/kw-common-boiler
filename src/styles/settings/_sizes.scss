@@ -85,8 +85,8 @@ $underm: $breakm - 1px;
 $breakpoints: (
   unders: calc(($unders - 100vw) * 999),
   underm: calc(($underm - 100vw) * 999),
-  overs: calc((100vw - $breaks) * 999),
-  overm: calc((100vw - $breakm) * 999),
+  overs: calc((100vw - $unders) * 999),
+  overm: calc((100vw - $underm) * 999),
 ) !default;
 
 @function breakpoints($key) {

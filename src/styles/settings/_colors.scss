@@ -54,11 +54,11 @@ $light-colors: (
   primary: brandcolor(base),
   light: brandcolor(light),
   dark: brandcolor(dark),
-  danger: tintcolor(danger),
-  success: tintcolor(success),
-  warning: tintcolor(warning),
-  info: tintcolor(info),
-  visited: tintcolor(visited),
+  danger: $danger,
+  success: $success,
+  warning: $warning,
+  info: $info,
+  visited: $visited,
 );
 
 @function lightcolor($key) {

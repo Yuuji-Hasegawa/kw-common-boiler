@@ -2,7 +2,7 @@ import styles from "../styles/components/pager-btn.module.scss";
 
 export const Pager = () => {
   return (
-    <nav className="u-max-item u-block-center u-mt-m u-mb-m" aria-label="Pagination">
+    <nav className="o-center u-mt-m u-mb-m" aria-label="Pagination">
       <ol className={["o-cluster o-cluster--center", `${styles.pager}`].join(" ")}>
         <li>
           <a href="#" className={styles.btn} aria-label="Previous">

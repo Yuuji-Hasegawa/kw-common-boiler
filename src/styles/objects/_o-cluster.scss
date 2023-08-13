@@ -6,6 +6,10 @@
   gap: setting.spacePx(m);
 
   &--center {
-    place-items: center;
+    justify-content: center;
+  }
+
+  &--middle {
+    align-items: center;
   }
 }

@@ -19,11 +19,11 @@ export const Stack = ({ size }) => {
 Stack.propTypes = {
   /**
    * 縦積みにした時の隙間。<br />
-   * styles/settings/_sizes.scss 内の $spaces と連動。
+   * styles/settings/_sizes.scss 内の $spacePx と連動。
    */
-  size: PropTypes.oneOf(["ssss", "sss", "ss", "s", "n", "m", "l", "ll", "lll"]),
+  size: PropTypes.oneOf(["3xs", "2xs", "xs", "s", "m", "l", "xl", "2xl", "3xl"]),
 };
 
 Stack.defaultProps = {
-  size: "n",
+  size: "m",
 };

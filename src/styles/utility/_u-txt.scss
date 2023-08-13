@@ -1,7 +1,7 @@
 @use "../settings" as setting;
 
 @mixin txtSize() {
-  @each $key, $name in setting.$font-size {
+  @each $key, $name in setting.$fontRemSize {
     @if $key == s or $key == m or $key == l {
       .u-txt-size-#{$key} {
         font-size: $name;
@@ -11,7 +11,7 @@
 }
 
 @mixin txtWeight() {
-  @each $key, $name in setting.$font-weight {
+  @each $key, $name in setting.$fontWeight {
     @if $key == m or $key == b {
       .u-txt-weight-#{$key} {
         font-weight: $name;
@@ -21,9 +21,9 @@
 }
 
 @mixin lineHeight() {
-  @each $key, $name in setting.$line-height {
+  @each $key, $name in setting.$lineHeight {
     @if $key != reset {
-      .u-line-height-#{$key} {
+      .u-lineHeight-#{$key} {
         line-height: $name;
       }
     }

@@ -1,0 +1,45 @@
+@use "../settings" as setting;
+
+.c-entry ul,
+.c-disc-list {
+  padding-left: setting.spaceEm(xl);
+  list-style-position: outside;
+  list-style-type: disc;
+}
+
+.c-count-list,
+.c-entry ol {
+  padding-left: setting.spaceEm(s);
+  counter-set: primarycount;
+
+  li {
+    padding-left: calc((setting.spaceEm(s) * 3) + setting.spaceEm(xs));
+    text-indent: calc(-1 * ((setting.spaceEm(s) * 3) + setting.spaceEm(xs)));
+    counter-increment: primaryCount;
+
+    &::before {
+      margin-right: setting.spaceEm(xs);
+      content: counter(primaryCount, decimal-leading-zero) ".";
+    }
+  }
+
+  ol {
+    padding-left: 0;
+  }
+}
+
+.c-count-list--secondary,
+.c-entry ol ol {
+  counter-set: secondarycount;
+
+  li {
+    padding-left: calc((setting.spaceEm(s) * 4) + setting.spaceEm(xs));
+    text-indent: calc(-1 * ((setting.spaceEm(s) * 4) + setting.spaceEm(xs)));
+    counter-increment: SecondaryCount;
+
+    &::before {
+      margin-right: setting.spaceEm(xs);
+      content: "(" counter(SecondaryCount, decimal-leading-zero) ")";
+    }
+  }
+}

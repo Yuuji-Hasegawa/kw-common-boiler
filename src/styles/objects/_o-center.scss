@@ -1,0 +1,13 @@
+@use "../settings" as setting;
+
+.o-center {
+  box-sizing: content-box;
+  padding-right: setting.spacePx(m);
+  padding-left: setting.spacePx(m);
+  margin-right: auto;
+  margin-left: auto;
+
+  &__content {
+    max-width: setting.$contentWrapper;
+  }
+}

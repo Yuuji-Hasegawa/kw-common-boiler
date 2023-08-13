@@ -1,0 +1,12 @@
+@use "../settings" as setting;
+
+.o-icon-parent {
+  display: inline-flex;
+  gap: setting.spaceEm(s);
+  align-items: baseline;
+}
+
+.o-icon {
+  font-size: setting.fontEmsize(2xs);
+  line-height: setting.lineheight(none);
+}

@@ -5,6 +5,12 @@
   @return map.get($sizes, $key);
 }
 
+$contentWrapper: 40em;
+$borderRadius: (
+  s: 4px,
+  m: 8px,
+  l: 12px,
+) !default;
 $font: 16px;
 $wrap: 70;
 $content: 40;
@@ -12,40 +18,84 @@ $sizes: (
   content: math.round($font * $content),
   wrapper: math.round($font * $wrap),
 ) !default;
-$base: 24px;
-$ratio: 1.618;
+$spacePxBase: 8px;
+$spaceRemBase: 0.5rem;
+$spaceEmBase: 0.5em;
+$spaceRatio: 1.618;
+$spacePx: (
+  3xs: math.div(math.div(math.div($spacePxBase, $spaceRatio), $spaceRatio), $spaceRatio),
+  2xs: math.div(math.div($spacePxBase, $spaceRatio), $spaceRatio),
+  xs: math.div($spacePxBase, $spaceRatio),
+  s: $spacePxBase * 1,
+  m: $spacePxBase * 2,
+  l: $spacePxBase * 3,
+  xl: $spacePxBase * 5,
+  2xl: $spacePxBase * 8,
+  3xl: $spacePxBase * 13,
+  4xl: $spacePxBase * 21,
+) !default;
+$spaceRem: (
+  3xs: math.div(math.div(math.div($spaceRemBase, $spaceRatio), $spaceRatio), $spaceRatio),
+  2xs: math.div(math.div($spaceRemBase, $spaceRatio), $spaceRatio),
+  xs: math.div($spaceRemBase, $spaceRatio),
+  s: $spaceRemBase * 1,
+  m: $spaceRemBase * 2,
+  l: $spaceRemBase * 3,
+  xl: $spaceRemBase * 5,
+  2xl: $spaceRemBase * 8,
+  3xl: $spaceRemBase * 13,
+  4xl: $spaceRemBase * 21,
+) !default;
+$spaceEm: (
+  3xs: math.div(math.div(math.div($spaceEmBase, $spaceRatio), $spaceRatio), $spaceRatio),
+  2xs: math.div(math.div($spaceEmBase, $spaceRatio), $spaceRatio),
+  xs: math.div($spaceEmBase, $spaceRatio),
+  s: $spaceEmBase * 1,
+  m: $spaceEmBase * 2,
+  l: $spaceEmBase * 3,
+  xl: $spaceEmBase * 5,
+  2xl: $spaceEmBase * 8,
+  3xl: $spaceEmBase * 13,
+  4xl: $spaceEmBase * 21,
+) !default;
 
-@function spaces($key) {
-  @return map.get($spaces, $key);
+@function spacePx($key) {
+  @return map.get($spacePx, $key);
 }
 
-$spaces: (
-  ssss: math.round(math.div(math.div(math.div(math.div($base, $ratio), $ratio), $ratio), $ratio)),
-  sss: math.round(math.div(math.div(math.div($base, $ratio), $ratio), $ratio)),
-  ss: math.round(math.div(math.div($base, $ratio), $ratio)),
-  s: math.round(math.div($base, $ratio)),
-  n: 16px,
-  m: $base,
-  l: math.round($base * $ratio),
-  ll: math.round($base * $ratio * $ratio),
-  lll: math.round($base * $ratio * $ratio * $ratio),
-) !default;
-$breaks: 576px;
-$breakm: 768px;
-$breakl: 992px;
+@function spaceRem($key) {
+  @return map.get($spaceRem, $key);
+}
+
+@function spaceEm($key) {
+  @return map.get($spaceEm, $key);
+}
+
+$breaks: 521px;
+$breakm: 961px;
 $unders: $breaks - 1px;
 $underm: $breakm - 1px;
-$underl: $breakl - 1px;
+$breakpoints: (
+  unders: calc(($unders - 100vw) * 999),
+  underm: calc(($underm - 100vw) * 999),
+  overs: calc((100vw - $breaks) * 999),
+  overm: calc((100vw - $breakm) * 999),
+) !default;
 
 @function breakpoints($key) {
   @return map.get($breakpoints, $key);
 }
 
-$breakpoints: (
-  unders: calc(($unders - 100vw) * 999),
-  underm: calc(($underm - 100vw) * 999),
-  underl: calc(($underl - 100vw) * 999),
-  overs: calc((100vw - $breaks) * 999),
-  overm: calc((100vw - $breakm) * 999),
-  overl: calc((100vw - $breakl) * 999),
+$aspect: (
+  square: "1/1",
+  landscape: "3/2",
+  standard: "4/3",
+  wide: "16/9",
+  portrait: "2/3",
+  upright: "3/4",
+  skyscraper: "9/16",
 ) !default;
+
+@function aspect($key) {
+  @return map.get($aspect, $key);
+}

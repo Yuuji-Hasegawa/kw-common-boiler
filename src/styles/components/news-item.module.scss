@@ -1,5 +1,10 @@
 @use "../settings" as setting;
 
+.link,
+.time {
+  font-weight: setting.fontweight(b);
+}
+
 .link {
   flex-basis: setting.breakpoints(unders);
   flex-grow: 1;
@@ -14,4 +19,8 @@
   &:focus {
     text-decoration: none;
   }
+}
+
+.time {
+  font-family: setting.$font-family-en-condensed;
 }

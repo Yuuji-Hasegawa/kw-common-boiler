@@ -25,10 +25,8 @@
   }
 
   font-family: setting.$font-family;
-  font-size: setting.fontsize(n);
-  font-weight: setting.fontweight(n);
   font-feature-settings: "pkna";
-  line-height: setting.lineheight(reset);
+  line-height: setting.lineheight(m);
   color: var(--c-txt);
   color-scheme: light dark;
   background-color: var(--c-bg);
@@ -41,7 +39,7 @@
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100svh;
 }
 
 ol,
@@ -51,7 +49,7 @@ ul {
 
 p {
   & + * {
-    margin-top: setting.spaces(m);
+    margin-top: setting.spaceRem(l);
   }
 }
 
@@ -61,7 +59,7 @@ strong {
 }
 
 small {
-  font-size: setting.fontsize(s);
+  font-size: setting.fontRemsize(xs);
 }
 
 img {
@@ -76,11 +74,8 @@ button {
 }
 
 svg {
-  box-sizing: content-box;
-  flex-shrink: 0;
   width: auto;
   height: 1em;
-  vertical-align: -0.125em;
 }
 
 details > summary {

@@ -70,3 +70,5 @@ $dark-colors: (
 @function darkcolor($key) {
   @return map.get($dark-colors, $key);
 }
+
+$filter: color.mix(lightcolor(bg), darkcolor(bg));

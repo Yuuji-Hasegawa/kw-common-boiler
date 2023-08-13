@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: flex-start;
 
-  @each $key, $name in setting.$spaces {
+  @each $key, $name in setting.$spacePx {
     &--#{$key} {
       & > * + * {
         margin-top: $name;

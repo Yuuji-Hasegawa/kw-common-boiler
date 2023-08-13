@@ -1,0 +1,15 @@
+@use "../settings" as setting;
+
+.o-box {
+  outline: 1px transparent;
+  outline-offset: -1px;
+
+  // color: var(--c-dimmed);
+  // background: var(--c-overlay);
+  // border: solid 1px var(--c-border);
+
+  /* 標準で線、背景色を設定するか悩みどころ */
+  &--bordered {
+    border: solid 1px var(--c-border);
+  }
+}

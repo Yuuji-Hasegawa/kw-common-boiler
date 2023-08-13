@@ -1,24 +1,63 @@
+@use "../settings" as setting;
 @use "../tools" as tool;
 
 .o-frame {
   position: relative;
   display: block;
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: #{setting.aspect(wide)};
   overflow: hidden;
 
-  &--with-border {
-    border: solid 1px var(--c-border);
-  }
-
   &--square {
-    aspect-ratio: 1/1;
+    aspect-ratio: #{setting.aspect(square)};
   }
 
-  &--switch {
+  &--landscape {
+    aspect-ratio: #{setting.aspect(landscape)};
+  }
+
+  &--standard {
+    aspect-ratio: #{setting.aspect(standard)};
+  }
+
+  &--portrait {
+    aspect-ratio: #{setting.aspect(portrait)};
+  }
+
+  &--upright {
+    aspect-ratio: #{setting.aspect(upright)};
+  }
+
+  &--skyscraper {
+    aspect-ratio: #{setting.aspect(skyscraper)};
+  }
+
+  &--switch-s {
+    aspect-ratio: #{setting.aspect(landscape)};
+
     @include tool.portrait {
-      aspect-ratio: 9/16;
+      aspect-ratio: #{setting.aspect(portrait)};
     }
+  }
+
+  &--switch-m {
+    aspect-ratio: #{setting.aspect(standard)};
+
+    @include tool.portrait {
+      aspect-ratio: #{setting.aspect(upright)};
+    }
+  }
+
+  &--switch-l {
+    aspect-ratio: #{setting.aspect(wide)};
+
+    @include tool.portrait {
+      aspect-ratio: #{setting.aspect(skyscraper)};
+    }
+  }
+
+  &--bordered {
+    border: solid 1px var(--c-border);
   }
 
   &--no-color {
@@ -31,8 +70,7 @@
     position: absolute;
     inset: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    place-items: center;
     overflow: hidden;
   }
 

@@ -1,11 +1,11 @@
 @use "../settings" as setting;
 
-.o-cluster {
+.o-reel {
   display: flex;
-  flex-wrap: wrap;
   gap: setting.spacePx(m);
+  overflow: auto hidden;
 
-  &--center {
-    place-items: center;
+  & > * {
+    flex: 0 0 auto;
   }
 }

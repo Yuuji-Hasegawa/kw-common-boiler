@@ -9,38 +9,32 @@ export default {
       control: {
         type: "radio",
       },
-      options: ["ssss", "sss", "ss", "s", "n", "m", "l", "ll", "lll"],
+      options: ["3xs", "2xs", "xs", "s", "m", "l", "xl", "2xl", "3xl"],
     },
   },
 };
 
-export const Ssss = {
+export const XXXS = {
   args: {
-    size: "ssss",
+    size: "3xs",
   },
 };
 
-export const Sss = {
+export const XXS = {
   args: {
-    size: "sss",
+    size: "2xs",
   },
 };
 
-export const Ss = {
+export const XS = {
   args: {
-    size: "ss",
+    size: "xs",
   },
 };
 
 export const S = {
   args: {
     size: "s",
-  },
-};
-
-export const N = {
-  args: {
-    size: "n",
   },
 };
 
@@ -56,14 +50,20 @@ export const L = {
   },
 };
 
-export const LL = {
+export const XL = {
   args: {
-    size: "ll",
+    size: "xl",
   },
 };
 
-export const LLL = {
+export const XXL = {
   args: {
-    size: "lll",
+    size: "2xl",
+  },
+};
+
+export const XXXL = {
+  args: {
+    size: "3xl",
   },
 };

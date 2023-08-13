@@ -1,0 +1,8 @@
+@use "../settings" as setting;
+
+.c-btn {
+  font-size: setting.fontRemsize(m);
+  font-weight: setting.fontweight(b);
+  line-height: setting.lineheight(m);
+  letter-spacing: setting.letterspacing(m);
+}

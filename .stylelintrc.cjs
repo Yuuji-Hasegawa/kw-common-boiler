@@ -1,7 +1,6 @@
 module.exports = {
 	extends: ["stylelint-config-standard-scss", "stylelint-config-recess-order"],
 	rules: {
-		indentation: 2,
 		"keyframes-name-pattern": null,
 		"scss/at-function-pattern": null,
 		"scss/at-mixin-pattern": null,
@@ -10,6 +9,7 @@ module.exports = {
 		"scss/selector-no-union-class-name": null,
 		"selector-class-pattern": null,
 		"selector-id-pattern": null,
+    "no-descending-specificity": null,
     "media-feature-name-no-unknown": [
       true,
       {

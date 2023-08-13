@@ -1,13 +1,18 @@
 @use "../settings" as setting;
 
-.o-switcher {
+.o-sidebar {
   display: flex;
   flex-wrap: wrap;
   gap: setting.spacePx(l) setting.spacePx(m);
 
-  & > * {
-    flex-basis: calc((setting.$breakm - 100%) * 999);
+  &__narrow {
+    flex-basis: 35%;
     flex-grow: 1;
-    max-width: 100%;
+  }
+
+  &__wide {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 50%;
   }
 }

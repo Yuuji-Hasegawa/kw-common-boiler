@@ -3,10 +3,17 @@ import styles from "../styles/components/pager-btn.module.scss";
 export const Pager = () => {
   return (
     <nav className="u-max-item u-block-center u-mt-m u-mb-m" aria-label="Pagination">
-      <ol className={["o-cluster", `${styles.pager}`].join(" ")}>
+      <ol className={["o-cluster o-cluster--center", `${styles.pager}`].join(" ")}>
         <li>
           <a href="#" className={styles.btn} aria-label="Previous">
-            <svg width="54" height="96" viewBox="0 0 54 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              className="o-icon"
+              width="54"
+              height="96"
+              viewBox="0 0 54 96"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 d="M0.0898438 47.9805C0.0898438 47.3555 0.207031 46.7695 0.441406 46.2227C0.675781 45.6758 1.04688 45.168 1.55469 44.6992L45.6172 2.04297C46.4766 1.14453 47.5508 0.695312 48.8398 0.695312C49.6992 0.695312 50.4609 0.890625 51.125 1.28125C51.8281 1.67188 52.375 2.21875 52.7656 2.92188C53.1953 3.58594 53.4102 4.36719 53.4102 5.26562C53.4102 6.47656 52.9805 7.55078 52.1211 8.48828L11.2227 47.9805L52.1211 87.5312C52.9805 88.4297 53.4102 89.5039 53.4102 90.7539C53.4102 91.6133 53.1953 92.3945 52.7656 93.0977C52.375 93.8008 51.8281 94.3281 51.125 94.6797C50.4609 95.0703 49.6992 95.2656 48.8398 95.2656C47.5508 95.2656 46.4766 94.8359 45.6172 93.9766L1.55469 51.3203C1.04688 50.8516 0.675781 50.3438 0.441406 49.7969C0.207031 49.25 0.0898438 48.6445 0.0898438 47.9805Z"
                 fill="currentColor"

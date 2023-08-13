@@ -1,0 +1,34 @@
+@use "../settings" as setting;
+
+.o-grid {
+  display: grid;
+  gap: setting.spacePx(l) setting.spacePx(m);
+
+  &--tri {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(
+        clamp(
+          clamp((100% - setting.spacepx(m) * 2) / 3, setting.breakpoints(underm), (50% - setting.spacepx(m) * 0.5)),
+          setting.breakpoints(underm),
+          clamp((50% - setting.spacepx(m) * 0.5), setting.breakpoints(unders), 100%)
+        ),
+        1fr
+      )
+    );
+  }
+
+  &--quart {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(
+        clamp(
+          clamp((100% - setting.spacepx(m) * 3) / 4, setting.breakpoints(underm), (50% - setting.spacepx(m) * 0.5)),
+          setting.breakpoints(underm),
+          clamp((50% - setting.spacepx(m) * 0.5), setting.breakpoints(unders), 100%)
+        ),
+        1fr
+      )
+    );
+  }
+}

@@ -1,0 +1,60 @@
+@use "../settings" as setting;
+
+.c-content-l,
+.c-content-m,
+.c-label-l,
+.c-label-m,
+.c-entry p {
+  letter-spacing: setting.letterspacing(m);
+}
+
+.c-content-l,
+.c-content-m,
+.c-suppl-l,
+.c-suppl-m,
+.c-entry p {
+  font-weight: setting.fontweight(r);
+  line-height: setting.lineheight(l);
+}
+
+.c-content-l,
+.c-entry p {
+  font-size: setting.fontRemsize(m);
+}
+
+.c-content-m,
+.c-label-l {
+  font-size: setting.fontRemsize(s);
+}
+
+.c-label-l,
+.c-label-m {
+  font-weight: setting.fontweight(m);
+}
+
+.c-label-m {
+  font-size: setting.fontRemsize(xs);
+}
+
+.c-suppl-l,
+.c-suppl-m {
+  letter-spacing: setting.letterspacing(s);
+}
+
+.c-suppl-l {
+  font-size: setting.fontRemsize(xs);
+}
+
+.c-suppl-m {
+  font-size: setting.fontRemsize(2xs);
+}
+
+.c-notes {
+  padding-left: calc(setting.spaceEm(s) + setting.spaceEm(xs));
+  text-indent: calc(-1 * (setting.spaceEm(s) + setting.spaceEm(xs)));
+
+  &::before {
+    margin-right: setting.spaceEm(xs);
+    content: "*";
+  }
+}

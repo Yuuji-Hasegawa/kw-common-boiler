@@ -1,7 +1,7 @@
 @use "../settings" as setting;
 
 .pager {
-  gap: setting.spacePx(s);
+  gap: setting.f-space-px(s);
 }
 
 .btn {
@@ -10,9 +10,9 @@
   justify-content: center;
   min-width: 2em;
   height: 100%;
-  padding: setting.spacePx(s) setting.spacePx(xs);
+  padding: setting.f-space-px(s) setting.f-space-px(xs);
   font-family: setting.$font-family-en;
-  font-weight: setting.fontweight(b);
+  font-weight: setting.f-fontweight(b);
   line-height: 1;
   color: var(--c-txt);
   background: var(--c-bg);

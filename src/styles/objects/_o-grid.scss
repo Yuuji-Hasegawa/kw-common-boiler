@@ -2,10 +2,13 @@
 
 .o-grid {
   display: grid;
-  --gutter: #{setting.spacePx(l)};
+
+  --gutter: #{setting.f-space-px(l)};
+
   &--gapL {
-    --gutter: #{setting.spacePx(xl)};
+    --gutter: #{setting.f-space-px(xl)};
   }
+
   gap: var(--gutter);
 
   &--tri {

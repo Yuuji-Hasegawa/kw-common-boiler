@@ -8,8 +8,8 @@
    * padding: setting.space(m);
    */
   & > * {
-    margin-top: setting.spacePx(m);
-    margin-bottom: setting.spacePx(m);
+    margin-top: setting.f-space-px(m);
+    margin-bottom: setting.f-space-px(m);
   }
 
   & > :first-child:not(.o-cover__middle) {

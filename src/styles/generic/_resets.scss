@@ -14,19 +14,19 @@
 }
 
 :root {
-  @each $key, $name in setting.$light-colors {
+  @each $key, $name in setting.$lightColors {
     --c-#{$key}: #{($name)};
   }
 
   @include tool.darkmode {
-    @each $key, $name in setting.$dark-colors {
+    @each $key, $name in setting.$darkColors {
       --c-#{$key}: #{($name)};
     }
   }
 
   font-family: setting.$font-family;
   font-feature-settings: "pkna";
-  line-height: setting.lineheight(m);
+  line-height: setting.f-lineheight(m);
   color: var(--c-txt);
   color-scheme: light dark;
   background-color: var(--c-bg);
@@ -49,17 +49,17 @@ ul {
 
 p {
   & + * {
-    margin-top: setting.spaceRem(l);
+    margin-top: setting.f-space-rem(l);
   }
 }
 
 b,
 strong {
-  font-weight: setting.fontweight(b);
+  font-weight: setting.f-fontweight(b);
 }
 
 small {
-  font-size: setting.fontRemsize(xs);
+  font-size: setting.f-font-remsize(xs);
 }
 
 img {

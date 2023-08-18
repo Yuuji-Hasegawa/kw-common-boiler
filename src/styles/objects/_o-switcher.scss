@@ -3,9 +3,10 @@
 .o-switcher {
   display: flex;
   flex-wrap: wrap;
-  gap: setting.spacePx(l);
+  gap: setting.f-space-px(l);
+
   &--gapL {
-    gap: setting.spacePx(xl);
+    gap: setting.f-space-px(xl);
   }
 
   & > * {

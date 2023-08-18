@@ -5,7 +5,7 @@
 .c-label-l,
 .c-label-m,
 .c-entry p {
-  letter-spacing: setting.letterspacing(m);
+  letter-spacing: setting.f-letterspacing(m);
 }
 
 .c-content-l,
@@ -13,48 +13,48 @@
 .c-suppl-l,
 .c-suppl-m,
 .c-entry p {
-  font-weight: setting.fontweight(r);
-  line-height: setting.lineheight(l);
+  font-weight: setting.f-fontweight(r);
+  line-height: setting.f-lineheight(l);
 }
 
 .c-content-l,
 .c-entry p {
-  font-size: setting.fontRemsize(m);
+  font-size: setting.f-font-remsize(m);
 }
 
 .c-content-m,
 .c-label-l {
-  font-size: setting.fontRemsize(s);
+  font-size: setting.f-font-remsize(s);
 }
 
 .c-label-l,
 .c-label-m {
-  font-weight: setting.fontweight(m);
+  font-weight: setting.f-fontweight(m);
 }
 
 .c-label-m {
-  font-size: setting.fontRemsize(xs);
+  font-size: setting.f-font-remsize(xs);
 }
 
 .c-suppl-l,
 .c-suppl-m {
-  letter-spacing: setting.letterspacing(s);
+  letter-spacing: setting.f-letterspacing(s);
 }
 
 .c-suppl-l {
-  font-size: setting.fontRemsize(xs);
+  font-size: setting.f-font-remsize(xs);
 }
 
 .c-suppl-m {
-  font-size: setting.fontRemsize(2xs);
+  font-size: setting.f-font-remsize(2xs);
 }
 
 .c-notes {
-  padding-left: calc(setting.spaceEm(s) + setting.spaceEm(xs));
-  text-indent: calc(-1 * (setting.spaceEm(s) + setting.spaceEm(xs)));
+  padding-left: calc(setting.f-space-em(s) + setting.f-space-em(xs));
+  text-indent: calc(-1 * (setting.f-space-em(s) + setting.f-space-em(xs)));
 
   &::before {
-    margin-right: setting.spaceEm(xs);
+    margin-right: setting.f-space-em(xs);
     content: "*";
   }
 }

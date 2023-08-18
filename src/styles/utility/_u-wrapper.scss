@@ -1,11 +1,11 @@
 @use "../settings" as setting;
 
 .u-wrapper {
-  max-width: setting.width(wrapper);
+  max-width: setting.f-width(wrapper);
 }
 
 .u-content-wrap {
-  max-width: setting.width(content);
+  max-width: setting.f-width(content);
 }
 
 .u-max-item {

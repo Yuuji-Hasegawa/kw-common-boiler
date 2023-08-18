@@ -3,7 +3,7 @@
 .o-cluster {
   display: flex;
   flex-wrap: wrap;
-  gap: setting.spacePx(m);
+  gap: setting.f-space-px(m);
 
   &--center {
     justify-content: center;

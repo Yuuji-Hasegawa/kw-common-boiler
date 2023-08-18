@@ -2,7 +2,7 @@
 
 .o-reel {
   display: flex;
-  gap: setting.spacePx(m);
+  gap: setting.f-space-px(m);
   overflow: auto hidden;
 
   & > * {

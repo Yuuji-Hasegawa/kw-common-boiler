@@ -2,11 +2,11 @@
 
 .o-icon-parent {
   display: inline-flex;
-  gap: setting.spaceEm(s);
+  gap: setting.f-space-em(s);
   align-items: baseline;
 }
 
 .o-icon {
-  font-size: setting.fontEmsize(2xs);
-  line-height: setting.lineheight(none);
+  font-size: setting.f-font-emsize(2xs);
+  line-height: setting.f-lineheight(none);
 }

@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "sass:math";
 
-@function width($key) {
+@function f-width($key) {
   @return map.get($sizes, $key);
 }
 
@@ -14,7 +14,7 @@ $borderRadius: (
   l: $borderRadiusBase * 2,
 ) !default;
 
-@function borderRadius($key) {
+@function f-borderRadius($key) {
   @return map.get($borderRadius, $key);
 }
 
@@ -66,15 +66,15 @@ $spaceEm: (
   4xl: $spaceEmBase * 21,
 ) !default;
 
-@function spacePx($key) {
+@function f-space-px($key) {
   @return map.get($spacePx, $key);
 }
 
-@function spaceRem($key) {
+@function f-space-rem($key) {
   @return map.get($spaceRem, $key);
 }
 
-@function spaceEm($key) {
+@function f-space-em($key) {
   @return map.get($spaceEm, $key);
 }
 
@@ -103,6 +103,6 @@ $aspect: (
   skyscraper: "9/16",
 ) !default;
 
-@function aspect($key) {
+@function f-aspect($key) {
   @return map.get($aspect, $key);
 }

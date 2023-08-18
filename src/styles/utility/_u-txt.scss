@@ -51,11 +51,11 @@
 }
 
 .u-txt-accent {
-  color: setting.$danger;
+  color: var(--c-danger);
 }
 
 .u-txt-alert {
-  color: setting.$warning;
+  color: var(--c-warning);
 }
 
 .u-txt-center {
@@ -74,7 +74,7 @@
 .u-txt-underline {
   text-decoration: underline;
   text-decoration-thickness: 0.5em;
-  text-decoration-color: rgba(setting.$warning, 0.4);
+  text-decoration-color: rgb(var(--c-warning) 0.4);
   text-underline-offset: -0.2em;
   text-decoration-skip-ink: none;
 }

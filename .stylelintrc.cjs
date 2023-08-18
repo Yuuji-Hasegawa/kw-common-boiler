@@ -28,5 +28,5 @@ module.exports = {
       }
     ],
 	},
-	ignoreFiles: ["**/node_modules/**", "./dist/**"],
+	ignoreFiles: ["**/node_modules/**", "./dist/**", "./src/styles/settings/**"],
 };

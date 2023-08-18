@@ -39,11 +39,11 @@ $fontEmSize: (
   6xl: $fontEmBase * math.div($numerator, $numerator - 7),
 ) !default;
 
-@function fontRemsize($key) {
+@function f-font-remsize($key) {
   @return map.get($fontRemSize, $key);
 }
 
-@function fontEmsize($key) {
+@function f-font-emsize($key) {
   @return map.get($fontEmSize, $key);
 }
 
@@ -53,7 +53,7 @@ $fontWeight: (
   b: 700,
 ) !default;
 
-@function fontweight($key) {
+@function f-fontweight($key) {
   @return map.get($fontWeight, $key);
 }
 
@@ -65,7 +65,7 @@ $lineHeight: (
   l: $lineHeightBase * math.div($numerator, $numerator - 1),
 ) !default;
 
-@function lineheight($key) {
+@function f-lineheight($key) {
   @return map.get($lineHeight, $key);
 }
 
@@ -74,7 +74,7 @@ $letterSpacing: (
   m: 0.04em,
 ) !default;
 
-@function letterspacing($key) {
+@function f-letterspacing($key) {
   @return map.get($letterSpacing, $key);
 }
 

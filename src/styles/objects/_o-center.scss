@@ -2,8 +2,16 @@
 
 .o-center {
   box-sizing: content-box;
-  padding-right: clamp(clamp(setting.spacePx(m),setting.breakpoints(overm),setting.spacePx(xl)),setting.breakpoints(overs),clamp(setting.spacePx(xl),setting.breakpoints(overm),setting.spacePx(3xl)));
-  padding-left: clamp(clamp(setting.spacePx(m),setting.breakpoints(overm),setting.spacePx(xl)),setting.breakpoints(overs),clamp(setting.spacePx(xl),setting.breakpoints(overm),setting.spacePx(3xl)));
+  padding-right: clamp(
+    clamp(setting.f-space-px(m), setting.breakpoints(overm), setting.f-space-px(xl)),
+    setting.breakpoints(overs),
+    clamp(setting.f-space-px(xl), setting.breakpoints(overm), setting.f-space-px(3xl))
+  );
+  padding-left: clamp(
+    clamp(setting.f-space-px(m), setting.breakpoints(overm), setting.f-space-px(xl)),
+    setting.breakpoints(overs),
+    clamp(setting.f-space-px(xl), setting.breakpoints(overm), setting.f-space-px(3xl))
+  );
   margin-right: auto;
   margin-left: auto;
 

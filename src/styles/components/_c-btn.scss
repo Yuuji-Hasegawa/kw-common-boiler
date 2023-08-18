@@ -1,8 +1,8 @@
 @use "../settings" as setting;
 
 .c-btn {
-  font-size: setting.fontRemsize(m);
-  font-weight: setting.fontweight(b);
-  line-height: setting.lineheight(m);
-  letter-spacing: setting.letterspacing(m);
+  font-size: setting.f-font-remsize(m);
+  font-weight: setting.f-fontweight(b);
+  line-height: setting.f-lineheight(m);
+  letter-spacing: setting.f-letterspacing(m);
 }

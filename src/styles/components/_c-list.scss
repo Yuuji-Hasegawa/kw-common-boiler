@@ -2,23 +2,23 @@
 
 .c-entry ul,
 .c-disc-list {
-  padding-left: setting.spaceEm(xl);
+  padding-left: setting.f-space-em(xl);
   list-style-position: outside;
   list-style-type: disc;
 }
 
 .c-count-list,
 .c-entry ol {
-  padding-left: setting.spaceEm(s);
+  padding-left: setting.f-space-em(s);
   counter-set: primarycount;
 
   li {
-    padding-left: calc((setting.spaceEm(s) * 3) + setting.spaceEm(xs));
-    text-indent: calc(-1 * ((setting.spaceEm(s) * 3) + setting.spaceEm(xs)));
+    padding-left: calc((setting.f-space-em(s) * 3) + setting.f-space-em(xs));
+    text-indent: calc(-1 * ((setting.f-space-em(s) * 3) + setting.f-space-em(xs)));
     counter-increment: primaryCount;
 
     &::before {
-      margin-right: setting.spaceEm(xs);
+      margin-right: setting.f-space-em(xs);
       content: counter(primaryCount, decimal-leading-zero) ".";
     }
   }
@@ -33,12 +33,12 @@
   counter-set: secondarycount;
 
   li {
-    padding-left: calc((setting.spaceEm(s) * 4) + setting.spaceEm(xs));
-    text-indent: calc(-1 * ((setting.spaceEm(s) * 4) + setting.spaceEm(xs)));
+    padding-left: calc((setting.f-space-em(s) * 4) + setting.f-space-em(xs));
+    text-indent: calc(-1 * ((setting.f-space-em(s) * 4) + setting.f-space-em(xs)));
     counter-increment: SecondaryCount;
 
     &::before {
-      margin-right: setting.spaceEm(xs);
+      margin-right: setting.f-space-em(xs);
       content: "(" counter(SecondaryCount, decimal-leading-zero) ")";
     }
   }

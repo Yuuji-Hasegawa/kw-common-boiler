@@ -14,18 +14,19 @@
   font-family: setting.$font-family-en;
   font-weight: setting.f-fontweight(b);
   line-height: 1;
-  color: var(--c-txt);
-  background: var(--c-bg);
-  border: solid 1px var(--c-txt);
+  color: var(--c-text-body);
+  background: var(--c-bg-primary);
+  border: solid 1px var(--c-textbody);
   transition: border-color 0.25s ease;
 
   &:visited {
-    color: var(--c-dimmed);
-    border-color: var(--c-dimmed);
+    color: var(--c-text-visited);
+    border-color: var(--c-text-visited);
   }
 
   &:hover,
   &:focus {
-    border-color: var(--c-primary);
+    border-color: var(--c-text-link);
+    outline: 1px solid var(--c-border-focused);
   }
 }

@@ -1,13 +1,13 @@
 @use "../settings" as setting;
 
 .u-bg-base {
-  background-color: var(--c-bg);
+  background-color: var(--c-bg-primary);
 }
 
 .u-bg-overlay {
-  background-color: var(--c-overlay);
+  background-color: var(--c-bg-tertiary);
 }
 
 .u-bg-brand {
-  background-color: var(--c-primary);
+  background-color: var(--c-brand-middle);
 }

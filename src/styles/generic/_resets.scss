@@ -14,12 +14,12 @@
 }
 
 :root {
-  @each $key, $name in setting.$lightColors {
+  @each $key, $name in setting.$semantic-light {
     --c-#{$key}: #{($name)};
   }
 
   @include tool.darkmode {
-    @each $key, $name in setting.$darkColors {
+    @each $key, $name in setting.$semantic-dark {
       --c-#{$key}: #{($name)};
     }
   }
@@ -27,9 +27,9 @@
   font-family: setting.$font-family;
   font-feature-settings: "pkna";
   line-height: setting.f-lineheight(m);
-  color: var(--c-txt);
+  color: var(--c-text-body);
   color-scheme: light dark;
-  background-color: var(--c-bg);
+  background-color: var(--c-bg-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-size-adjust: 100%;

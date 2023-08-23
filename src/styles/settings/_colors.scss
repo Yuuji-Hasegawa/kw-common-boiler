@@ -2,99 +2,6 @@
 @use "sass:color";
 @use "sass:math";
 @use "sass:meta";
-@use "sass:string";
-@use "sass:list";
-
-@function f-tint($color, $value) {
-  @return color.adjust(color.mix(white, $color, $value), $saturation: -1 * $value );
-}
-
-$pattern: (
-  myBlue: #007aff,
-  myIndigo: #5856d6,
-  myPurple: #af52de,
-  myPink: #ff2d55,
-  myRed: #ff3b30,
-  myOrange: #ff9500,
-  myYellow: #ffcc00,
-  myGreen: #28cd41,
-  myTeal: #59adc4,
-  myCyan: #55bef0,
-) !default;
-
-$colorLabels: (
-  myPrimary: map.get($pattern, myBlue),
-  myDanger: map.get($pattern, myRed),
-  mySuccess: map.get($pattern, myGreen),
-  myWarning: map.get($pattern, myYellow),
-  myInfo: map.get($pattern, myCyan),
-  myVisited: map.get($pattern, myPurple),
-) !default;
-
-$grayH: color.hue(map.get($colorLabels, myPrimary));
-$grayS: 10%;
-$grayBase: 93%;
-$grayLevel: 11.3%;
-$grayDarkL: $grayBase - $grayLevel * 2;
-$grayL: $grayBase - $grayLevel * 5;
-$grayPaleL: $grayBase - $grayLevel * 7;
-$grayLightness: 93%;
-$grayLightnessIncrement: 11.3%;
-
-$brandColors: (
-  lightTint: color.adjust(map.get($colorLabels, myPrimary), $lightness: 15%, $saturation: -10%, $hue: -1deg),
-  lightBase: map.get($colorLabels, myPrimary),
-  lightShade: color.adjust(map.get($colorLabels, myPrimary), $lightness: -15%, $saturation: 10%, $hue: 1deg),
-  darkTint: color.adjust(f-tint(map.get($colorLabels, myPrimary), $grayPaleL), $lightness: 15%, $saturation: -10%, $hue: -1deg),
-  darkBase: f-tint(map.get($colorLabels, myPrimary), $grayPaleL),
-  darkShade: color.adjust(f-tint(map.get($colorLabels, myPrimary), $grayPaleL), $lightness: -15%, $saturation: 10%, $hue: 1deg),
-) !default;
-
-$lightColors: (
-  bg: #fff,
-  overlay: hsla($grayH, $grayS, $grayPaleL, 7%),
-  input: hsl($grayH, $grayS - 7%, $grayBase + 1%),
-  txt: hsl($grayH, $grayS, $grayPaleL),
-  dimmed: hsla($grayH, $grayS, $grayPaleL, 50%),
-  border: hsla($grayH, $grayS, $grayPaleL, 10%),
-  separator: hsla($grayH, $grayS, $grayDarkL),
-  primary: map.get($brandColors, lightBase),
-  tint: map.get($brandColors,lightTint),
-  shade: map.get($brandColors, lightShade),
-  danger: map.get($colorLabels, myDanger),
-  success: map.get($colorLabels, mySuccess),
-  warning: map.get($colorLabels, myWarning),
-  info: map.get($colorLabels, myInfo),
-  visited: map.get($colorLabels, myVisited),
-);
-
-$darkColors: (
-  bg: hsl($grayH, $grayS, $grayPaleL),
-  overlay: hsla($grayH, $grayS, $grayBase, 7%),
-  input: hsl($grayH, $grayS - 4%, $grayBase - 74%),
-  txt: hsl($grayH, $grayS, $grayBase),
-  dimmed: hsla($grayH, $grayS, $grayBase, 50%),
-  border: hsla($grayH, $grayS, $grayBase, 10%),
-  separator: hsla($grayH, $grayS, $grayL),
-  primary: map.get($brandColors, darkBase),
-  tint: map.get($brandColors, darkTint),
-  shade: map.get($brandColors, darkShade),
-  danger: f-tint(map.get($colorLabels, myDanger), $grayPaleL),
-  success: f-tint(map.get($colorLabels, mySuccess), $grayPaleL),
-  warning: f-tint(map.get($colorLabels, myWarning), $grayPaleL),
-  info: f-tint(map.get($colorLabels, myInfo), $grayPaleL),
-  visited: f-tint(map.get($colorLabels, myVisited), $grayPaleL),
-);
-
-@function f-lightcolor($key) {
-  @return map.get($lightColors, $key);
-}
-
-@function f-darkcolor($key) {
-  @return map.get($darkColors, $key);
-}
-
-$filter: color.mix(map.get($lightColors, bg), map.get($darkColors, bg));
 
 @function f-mix($color1, $color2, $weight: 0.5) {
   @if $weight == 0 {
@@ -274,24 +181,316 @@ $filter: color.mix(map.get($lightColors, bg), map.get($darkColors, bg));
   }
 }
 
-$targetL: map.get(f-rgb-to-oklab(#ffffff), l);
-$middleColor: f-lighten(map.get($colorLabels, myPrimary), math.div((0.6 * $targetL - map.get(f-rgb-to-oklab(map.get($colorLabels, myPrimary)), l)), map.get(f-rgb-to-oklab(map.get($colorLabels, myPrimary)), l)));
-$middleL: map.get(f-rgb-to-oklab($middleColor), l);
+@function f-gen-secondary($color) {
+  $tmp: f-rgb-to-oklch($color);
+  @return f-oklch-to-rgb(
+    (
+      l: 0.65745,
+      c: 0.0385,
+      h: map.get($tmp, h),
+    )
+  );
+}
 
-$primaryTone: (
-  level0: f-lighten($middleColor, math.div((0 * $targetL - $middleL), $middleL)),
-  level10: f-lighten($middleColor, math.div((0.1 * $targetL - $middleL), $middleL)),
-  level20: f-lighten($middleColor, math.div((0.2 * $targetL - $middleL), $middleL)),
-  level30: f-lighten($middleColor, math.div((0.3 * $targetL - $middleL), $middleL)),
-  level40: f-lighten($middleColor, math.div((0.4 * $targetL - $middleL), $middleL)),
-  level50: f-lighten($middleColor, math.div((0.5 * $targetL - $middleL), $middleL)),
-  level60: $middleColor,
-  level70: f-lighten($middleColor, math.div(((0.7 * $targetL - $middleL) + $middleL * 0.1), $middleL)),
-  level80: f-lighten($middleColor, math.div(((0.8 * $targetL - $middleL) + $middleL * math.sqrt(0.03)), $middleL)),
-  level90: f-lighten($middleColor, math.div(((0.9 * $targetL - $middleL) + $middleL * 0.2667), $middleL)),
-  level95: f-lighten($middleColor, math.div(((0.95 * $targetL - $middleL) + $middleL * 0.3), $middleL)),
-  level99: f-lighten($middleColor, math.div(((0.99 * $targetL - $middleL) + $middleL * 0.325), $middleL)),
-  level100: f-lighten($middleColor, math.div(((1.0 * $targetL - $middleL) + $middleL * math.div(1,3)), $middleL)),
+@function f-gen-tert($color) {
+  $tmp: f-rgb-to-oklch($color);
+  @return f-oklch-to-rgb(
+    (
+      l: 0.6586,
+      c: 0.05775,
+      h: map.get($tmp, h) + 60,
+    )
+  );
+}
+
+@function f-gen-black($color) {
+  $tmp: f-rgb-to-oklch($color);
+  @return f-oklch-to-rgb(
+    (
+      l: 0.6558,
+      c: 0.009625,
+      h: map.get($tmp, h),
+    )
+  );
+}
+
+@function f-gen-gray($color) {
+  $tmp: f-rgb-to-oklch($color);
+  @return f-oklch-to-rgb(
+    (
+      l: 0.6555,
+      c: 0.01925,
+      h: map.get($tmp, h),
+    )
+  );
+}
+
+@function f-palette-gen($color) {
+  $target: map.get(f-rgb-to-oklab(#ffffff), l);
+  $middle: f-lighten($color, math.div((0.6 * $target - map.get(f-rgb-to-oklab($color), l)), map.get(f-rgb-to-oklab($color), l)));
+  @return (
+    level0: f-lighten($middle, math.div((0 * $target - map.get(f-rgb-to-oklab($middle), l)), map.get(f-rgb-to-oklab($middle), l))),
+    level10: f-lighten($middle, math.div((0.1 * $target - map.get(f-rgb-to-oklab($middle), l)), map.get(f-rgb-to-oklab($middle), l))),
+    level20: f-lighten($middle, math.div((0.2 * $target - map.get(f-rgb-to-oklab($middle), l)), map.get(f-rgb-to-oklab($middle), l))),
+    level30: f-lighten($middle, math.div((0.3 * $target - map.get(f-rgb-to-oklab($middle), l)), map.get(f-rgb-to-oklab($middle), l))),
+    level40: f-lighten($middle, math.div((0.4 * $target - map.get(f-rgb-to-oklab($middle), l)), map.get(f-rgb-to-oklab($middle), l))),
+    level50: f-lighten($middle, math.div((0.5 * $target - map.get(f-rgb-to-oklab($middle), l)), map.get(f-rgb-to-oklab($middle), l))),
+    level60: $middle,
+    level70: f-lighten($middle, math.div(((0.7 * $target - map.get(f-rgb-to-oklab($middle), l)) + map.get(f-rgb-to-oklab($middle), l) * 0.1), map.get(f-rgb-to-oklab($middle), l))),
+    level80: f-lighten($middle, math.div(((0.8 * $target - map.get(f-rgb-to-oklab($middle), l)) + map.get(f-rgb-to-oklab($middle), l) * math.sqrt(0.03)), map.get(f-rgb-to-oklab($middle), l))),
+    level90: f-lighten($middle, math.div(((0.9 * $target - map.get(f-rgb-to-oklab($middle), l)) + map.get(f-rgb-to-oklab($middle), l) * 0.2667), map.get(f-rgb-to-oklab($middle), l))),
+    level95: f-lighten($middle, math.div(((0.95 * $target - map.get(f-rgb-to-oklab($middle), l)) + map.get(f-rgb-to-oklab($middle), l) * 0.3), map.get(f-rgb-to-oklab($middle), l))),
+    level99: f-lighten($middle, math.div(((0.99 * $target - map.get(f-rgb-to-oklab($middle), l)) + map.get(f-rgb-to-oklab($middle), l) * 0.325), map.get(f-rgb-to-oklab($middle), l))),
+    level100: f-lighten($middle, math.div(((1.0 * $target - map.get(f-rgb-to-oklab($middle), l)) + map.get(f-rgb-to-oklab($middle), l) * math.div(1,3)), map.get(f-rgb-to-oklab($middle), l))),
+  );
+}
+
+$pattern: (
+  myBlue: #007aff,
+  myIndigo: #5856d6,
+  myPurple: #af52de,
+  myPink: #ff2d55,
+  myRed: #ff3b30,
+  myOrange: #ff9500,
+  myYellow: #ffcc00,
+  myGreen: #28cd41,
+  myTeal: #59adc4,
+  myCyan: #55bef0,
 ) !default;
 
-@debug $primaryTone;
+$colorLabels: (
+  myPrimary: map.get($pattern, myBlue),
+  myDanger: map.get($pattern, myRed),
+  mySuccess: map.get($pattern, myGreen),
+  myWarning: map.get($pattern, myYellow),
+  myInfo: map.get($pattern, myCyan),
+  myVisited: map.get($pattern, myPurple),
+) !default;
+
+$ref-primary: f-palette-gen(map.get($colorLabels, myPrimary));
+$ref-secondary: f-palette-gen(f-gen-secondary(map.get($colorLabels, myPrimary)));
+$ref-tert: f-palette-gen(f-gen-tert(map.get($colorLabels, myPrimary)));
+$ref-mono: f-palette-gen(f-gen-black(map.get($colorLabels, myPrimary)));
+$ref-gray: f-palette-gen(f-gen-gray(map.get($colorLabels, myPrimary)));
+$ref-danger: f-palette-gen(map.get($colorLabels, myDanger));
+$ref-success: f-palette-gen(map.get($colorLabels, mySuccess));
+$ref-warning: f-palette-gen(map.get($colorLabels, myWarning));
+$ref-info: f-palette-gen(map.get($colorLabels, myInfo));
+$ref-visited: f-palette-gen(map.get($colorLabels, myVisited));
+
+$sys-light: (
+  primary: map.get($ref-primary, level40),
+  onPrimary: map.get($ref-primary, level100),
+  primaryContainer: map.get($ref-primary, level90),
+  onPrimaryContainer: map.get($ref-primary, level10),
+  primaryFixed: map.get($ref-primary, level90),
+  onPrimaryFixed: map.get($ref-primary, level10),
+  primaryFixedDim: map.get($ref-primary, level80),
+  onPrimaryFixedVariant: map.get($ref-primary, level30),
+  secondary: map.get($ref-secondary, level40),
+  onSecondary: map.get($ref-secondary, level100),
+  secondaryContainer: map.get($ref-secondary, level90),
+  onSecondaryContainer: map.get($ref-secondary, level10),
+  secondaryFixed: map.get($ref-secondary, level90),
+  onSecondaryFixed: map.get($ref-secondary, level10),
+  secondaryFixedDim: map.get($ref-secondary, level80),
+  onSecondaryFixedVariant: map.get($ref-secondary, level30),
+  tertiary: map.get($ref-tert, level40),
+  onTertiary: map.get($ref-tert, level100),
+  tertiaryContainer: map.get($ref-tert, level90),
+  onTertiaryContainer: map.get($ref-tert, level10),
+  tertiaryFixed: map.get($ref-tert, level90),
+  onTertiaryFixed: map.get($ref-tert, level10),
+  tertiaryFixedDim: map.get($ref-tert, level80),
+  onTertiaryFixedVariant: map.get($ref-tert, level30),
+  error: map.get($ref-danger, level40),
+  errorContainer: map.get($ref-danger, level90),
+  onError: map.get($ref-danger, level100),
+  onErrorContainer: map.get($ref-danger, level10),
+  success: map.get($ref-success, level40),
+  successContainer: map.get($ref-success, level90),
+  onSuccess: map.get($ref-success, level100),
+  onSuccessContainer: map.get($ref-success, level10),
+  warning: map.get($ref-warning, level40),
+  warningContainer: map.get($ref-warning, level90),
+  onWarning: map.get($ref-warning, level100),
+  onWarningContainer: map.get($ref-warning, level10),
+  info: map.get($ref-info, level40),
+  infoContainer: map.get($ref-info, level90),
+  onInfo: map.get($ref-info, level100),
+  onInfoContainer: map.get($ref-info, level10),
+  visited: map.get($ref-visited, level40),
+  visitedContainer: map.get($ref-visited, level90),
+  onVisited: map.get($ref-visited, level100),
+  onVisitedContainer: map.get($ref-visited, level10),
+  container: map.get($ref-primary, level99),
+  onContainer: map.get($ref-mono, level10),
+  outline: map.get($ref-gray, level50),
+  inverseOnSurface: map.get($ref-gray, level95),
+  inverseSurface: map.get($ref-mono, level20),
+  inversePrimary: map.get($ref-primary, level80),
+  shadow: map.get($ref-mono, level0),
+  surfaceTint: map.get($ref-primary, level40),
+  outlineVariant: map.get($ref-mono, level80),
+  scrim: map.get($ref-mono, level0),
+  surface: map.get($ref-mono, level99),
+  onSurface: map.get($ref-mono, level10),
+  surfaceVariant: map.get($ref-gray, level90),
+  onSurfaceVariant: map.get($ref-gray, level30),
+  surfaceContainerHighest: map.get($ref-mono,level90),
+  surfaceContainerHigh: map.get($ref-mono,level90),
+  surfaceContainer: map.get($ref-mono,level95),
+  surfaceContainerLow: map.get($ref-mono,level95),
+  surfaceContainerLowest: map.get($ref-mono,level100),
+  surfaceDim: map.get($ref-mono,level90),
+  surfaceBright: map.get($ref-mono, level99),
+) !default;
+
+$sys-dark: (
+  primary: map.get($ref-primary, level80),
+  onPrimary: map.get($ref-primary, level20),
+  primaryContainer: map.get($ref-primary, level30),
+  onPrimaryContainer: map.get($ref-primary, level90),
+  primaryFixed: map.get($ref-primary, level90),
+  onPrimaryFixed: map.get($ref-primary, level10),
+  primaryFixedDim: map.get($ref-primary, level80),
+  onPrimaryFixedVariant: map.get($ref-primary, level30),
+  secondary: map.get($ref-secondary, level80),
+  onSecondary: map.get($ref-secondary, level20),
+  secondaryContainer: map.get($ref-secondary, level30),
+  onSecondaryContainer: map.get($ref-secondary, level90),
+  secondaryFixed: map.get($ref-secondary, level90),
+  onSecondaryFixed: map.get($ref-secondary, level10),
+  secondaryFixedDim: map.get($ref-secondary, level80),
+  onSecondaryFixedVariant: map.get($ref-secondary, level30),
+  tertiary: map.get($ref-tert, level80),
+  onTertiary: map.get($ref-tert, level20),
+  tertiaryContainer: map.get($ref-tert, level30),
+  onTertiaryContainer: map.get($ref-tert, level90),
+  tertiaryFixed: map.get($ref-tert, level90),
+  onTertiaryFixed: map.get($ref-tert, level10),
+  tertiaryFixedDim: map.get($ref-tert, level80),
+  onTertiaryFixedVariant: map.get($ref-tert, level30),
+  error: map.get($ref-danger, level80),
+  errorContainer: map.get($ref-danger, level30),
+  onError: map.get($ref-danger, level20),
+  onErrorContainer: map.get($ref-danger, level90),
+  success: map.get($ref-success, level80),
+  successContainer: map.get($ref-success, level30),
+  onSuccess: map.get($ref-success, level20),
+  onSuccessContainer: map.get($ref-success, level90),
+  warning: map.get($ref-warning, level80),
+  warningContainer: map.get($ref-warning, level30),
+  onWarning: map.get($ref-warning, level20),
+  onWarningContainer: map.get($ref-warning, level90),
+  info: map.get($ref-info, level80),
+  infoContainer: map.get($ref-info, level30),
+  onInfo: map.get($ref-info, level20),
+  onInfoContainer: map.get($ref-info, level90),
+  visited: map.get($ref-visited, level80),
+  visitedContainer: map.get($ref-visited, level30),
+  onVisited: map.get($ref-visited, level20),
+  onVisitedContainer: map.get($ref-visited, level90),
+  container: map.get($ref-mono, level10),
+  onContainer: map.get($ref-mono, level90),
+  outline: map.get($ref-gray, level60),
+  inverseOnSurface: map.get($ref-mono, level10),
+  inverseSurface: map.get($ref-mono, level90),
+  inversePrimary: map.get($ref-primary, level40),
+  shadow: map.get($ref-mono, level0),
+  surfaceTint: map.get($ref-primary, level80),
+  outlineVariant: map.get($ref-gray, level30),
+  scrim: map.get($ref-mono, level0),
+  surface: map.get($ref-mono, level10),
+  onSurface: map.get($ref-mono, level80),
+  surfaceVariant: map.get($ref-gray, level30),
+  onSurfaceVariant: map.get($ref-gray, level80),
+  surfaceContainerHighest: map.get($ref-mono, level20),
+  surfaceContainerHigh: map.get($ref-mono, level20),
+  surfaceContainer: map.get($ref-mono, level10),
+  surfaceContainerLow: map.get($ref-mono, level10),
+  surfaceContainerLowest: map.get($ref-mono, level10),
+  surfaceDim: map.get($ref-mono, level10),
+  surfaceBright: map.get($ref-mono, level20),
+) !default;
+
+$brandColors: (
+  lightTint: f-lighten(map.get($colorLabels, myPrimary), 0.15),
+  lightMiddle: map.get($colorLabels, myPrimary),
+  lightShade: f-darken(map.get($colorLabels, myPrimary), 0.15),
+  darkTint: f-lighten(f-lighten(map.get($colorLabels, myPrimary),0.4), 0.15),
+  darkMiddle: f-lighten(map.get($colorLabels, myPrimary),0.4),
+  darkShade: f-darken(f-lighten(map.get($colorLabels, myPrimary),0.4), 0.15),
+) !default;
+
+$semantic-light: (
+  text-body: map.get($sys-light, onContainer),
+  text-description: map.get($sys-light, onSecondaryContainer),
+  text-placeholder: map.get($sys-light, onSurfaceVariant),
+  text-on-fill: map.get($sys-light, onPrimary),
+  text-link: map.get($sys-light, primary),
+  text-hover: map.get($sys-light, primary),
+  text-active: map.get($sys-light, primary),
+  text-visited: map.get($sys-light, visited),
+  text-alert: map.get($sys-light, error),
+  text-disabled: map.get($sys-light, onSurface),
+  icon-label: map.get($sys-light, onContainer),
+  icon-active: map.get($sys-light, primary),
+  icon-alert: map.get($sys-light, error),
+  icon-disabled: map.get($sys-light, onSurface),
+  button-normal: map.get($sys-light, primary),
+  button-hover: map.get($sys-light, primary),
+  button-active: map.get($sys-light, primary),
+  button-disabled: map.get($sys-light, onSurface),
+  border-field: map.get($sys-light, onContainer),
+  border-divider: map.get($sys-light, surfaceVariant),
+  border-focused: map.get($sys-light, warning),
+  border-selected: map.get($sys-light, primary),
+  border-alert: map.get($sys-light, error),
+  border-disabled: map.get($sys-light, surfaceVariant),
+  bg-primary: map.get($sys-light, container),
+  bg-secondary: map.get($sys-light, secondaryContainer),
+  bg-tertiary: map.get($sys-light, surface),
+  status-success: map.get($sys-light, success),
+  status-alert: map.get($sys-light, error),
+  status-warning: map.get($sys-light, warning),
+  brand-tint: map.get($brandColors, lightTint),
+  brand-middle: map.get($brandColors, lightMiddle),
+  brand-shade: map.get($brandColors, lightShade),
+) !default;
+
+$semantic-dark: (
+  text-body: map.get($sys-dark, onContainer),
+  text-description: map.get($sys-dark, onSecondaryContainer),
+  text-placeholder: map.get($sys-dark, onSurfaceVariant),
+  text-on-fill: map.get($sys-dark, onPrimary),
+  text-link: map.get($sys-dark, primary),
+  text-hover: map.get($sys-dark, primary),
+  text-active: map.get($sys-dark, primary),
+  text-visited: map.get($sys-dark, visited),
+  text-alert: map.get($sys-dark, error),
+  text-disabled: map.get($sys-dark, onSurface),
+  icon-label: map.get($sys-dark, onContainer),
+  icon-active: map.get($sys-dark, primary),
+  icon-alert: map.get($sys-dark, error),
+  icon-disabled: map.get($sys-dark, onSurfaceVariant),
+  button-normal: map.get($sys-dark, primary),
+  button-hover: map.get($sys-dark, primary),
+  button-active: map.get($sys-dark, primary),
+  button-disabled: map.get($sys-dark, onSurface),
+  border-field: map.get($sys-dark, onContainer),
+  border-divider: map.get($sys-dark, surfaceVariant),
+  border-focused: map.get($sys-dark, warning),
+  border-selected: map.get($sys-dark, primary),
+  border-alert: map.get($sys-dark, error),
+  border-disabled: map.get($sys-dark, surfaceVariant),
+  bg-primary: map.get($sys-dark, container),
+  bg-secondary: map.get($sys-dark, secondaryContainer),
+  bg-tertiary: map.get($sys-dark, surface),
+  status-success: map.get($sys-dark, success),
+  status-alert: map.get($sys-dark, error),
+  status-warning: map.get($sys-dark, warning),
+  brand-tint: map.get($brandColors, darkTint),
+  brand-middle: map.get($brandColors, darkMiddle),
+  brand-shade: map.get($brandColors, darkShade),
+) !default;

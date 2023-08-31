@@ -8,7 +8,8 @@
   aspect-ratio: #{setting.f-aspect(wide)};
   overflow: hidden;
 
-  &--square {
+  &--square,
+  &--round {
     aspect-ratio: #{setting.f-aspect(square)};
   }
 
@@ -72,6 +73,10 @@
     display: flex;
     place-items: center;
     overflow: hidden;
+  }
+
+  &--round > * {
+    border-radius: 50%;
   }
 
   > source,

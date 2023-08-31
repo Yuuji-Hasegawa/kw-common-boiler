@@ -14,7 +14,7 @@ $borderRadius: (
   l: $borderRadiusBase * 2,
 ) !default;
 
-@function f-borderRadius($key) {
+@function f-border-radius($key) {
   @return map.get($borderRadius, $key);
 }
 

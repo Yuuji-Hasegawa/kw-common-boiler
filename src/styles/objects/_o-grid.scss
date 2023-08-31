@@ -5,7 +5,7 @@
 
   --gutter: #{setting.f-space-px(l)};
 
-  &--gapL {
+  &--gap-XL {
     --gutter: #{setting.f-space-px(xl)};
   }
 
@@ -13,7 +13,7 @@
 
   &--tri {
     grid-template-columns: repeat(
-      auto-fit,
+      auto-fill,
       minmax(
         clamp(
           clamp((100% - var(--gutter) * 2) / 3, setting.breakpoints(underm), (50% - var(--gutter) * 0.5)),
@@ -27,7 +27,7 @@
 
   &--quart {
     grid-template-columns: repeat(
-      auto-fit,
+      auto-fill,
       minmax(
         clamp(
           clamp((100% - var(--gutter) * 3) / 4, setting.breakpoints(underm), (50% - var(--gutter) * 0.5)),

@@ -1,28 +1,7 @@
 @use "../settings" as setting;
 
-.link,
-.time {
-  font-weight: setting.f-fontweight(b);
-}
-
 .link {
   flex-basis: setting.breakpoints(unders);
   flex-grow: 1;
-  color: var(--c-text-link);
   text-align: left;
-  text-decoration: underline;
-
-  &:visited {
-    color: var(--c-text-visited);
-  }
-
-  &:hover,
-  &:focus {
-    color: var(--c-text-hover);
-    text-decoration: none;
-  }
-}
-
-.time {
-  font-family: setting.$font-family-en-condensed;
 }

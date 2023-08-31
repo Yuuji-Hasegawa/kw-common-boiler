@@ -4,7 +4,8 @@
 .c-content-m,
 .c-label-l,
 .c-label-m,
-.c-entry p {
+.c-entry p,
+.c-card-link {
   letter-spacing: setting.f-letterspacing(m);
 }
 
@@ -12,13 +13,15 @@
 .c-content-m,
 .c-suppl-l,
 .c-suppl-m,
-.c-entry p {
+.c-entry p,
+.c-card-link {
   font-weight: setting.f-fontweight(r);
   line-height: setting.f-lineheight(l);
 }
 
 .c-content-l,
-.c-entry p {
+.c-entry p,
+.c-card-link {
   font-size: setting.f-font-remsize(m);
 }
 
@@ -57,4 +60,72 @@
     margin-right: setting.f-space-em(xs);
     content: "*";
   }
+}
+
+.c-number-text {
+  font-family: setting.$font-family-en;
+}
+
+.c-number-text-variant {
+  font-family: setting.$font-family-en-condensed;
+}
+
+.c-entry a,
+.c-text-link {
+  color: var(--c-text-link);
+  text-decoration: underline;
+  transition: all 0.25s ease;
+
+  &--no-underline {
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: var(--c-text-visited);
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--c-text-hover);
+    text-decoration: none;
+  }
+}
+
+.c-text-link {
+  &--full-wide {
+    display: block;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+.c-card-link {
+  color: var(--c-text-body);
+  transition: all 0.25s ease;
+
+  .o-box--blog-card:visited & {
+    color: var(--c-text-visited);
+  }
+
+  .o-box--blog-card:hover &,
+  .o-box--blog-card:focus & {
+    color: var(--c-text-hover);
+  }
+}
+
+.c-share-parent {
+  position: relative;
+
+  .o-icon {
+    position: absolute;
+    top: 50%;
+    left: setting.f-space-em(m);
+    transform: translateY(-50%);
+  }
+}
+
+.c-author-name {
+  display: table;
+  width: min(setting.breakpoints(overs),100%);
+  min-width: max-content;
 }

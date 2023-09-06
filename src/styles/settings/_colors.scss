@@ -474,7 +474,7 @@ $semantic-dark: (
   icon-label: map.get($sys-dark, onContainer),
   icon-active: map.get($sys-dark, primary),
   icon-alert: map.get($sys-dark, error),
-  icon-disabled: map.get($sys-dark, onSurfaceVariant),
+  icon-disabled: map.get($sys-dark, onSurface),
   button-normal: map.get($sys-dark, primary),
   button-hover: color.mix(map.get($sys-dark, primary),map.get($sys-light, onContainer), 85%),
   button-active: map.get($sys-dark, primary),

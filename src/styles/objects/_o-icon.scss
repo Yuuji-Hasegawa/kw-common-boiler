@@ -51,8 +51,8 @@
     padding: setting.f-space-px(xs) setting.f-space-px(s);
     margin-left: auto;
     font-weight: setting.f-fontweight(b);
-    color: var(--c-text-placeholder);
-    background-color: var(--c-bg-tertiary);
+    color: var(--c-text-body);
+    background-color: var(--c-bg-primary);
     border-radius: setting.f-border-radius(s);
   }
 }

@@ -15,7 +15,7 @@
 
   &--entry,
   &--bg-fill {
-    background: var(--c-text-on-fill);
+    background: var(--c-bg-qua);
   }
 
   &--entry {
@@ -177,7 +177,7 @@
     padding: setting.f-space-px(s);
     color: var(--c-text-placeholder);
     resize: none;
-    background: var(--c-bg-tertiary);
+    background: var(--c-bg-qua);
     border-color: var(--c-border-divider);
     border-radius: setting.f-border-radius(s);
 
@@ -199,7 +199,7 @@
     flex-shrink: 0;
     width: 1em;
     height: 1em;
-    background: var(--c-bg-tertiary);
+    background: var(--c-bg-qua);
     border-color: var(--c-border-divider);
 
     .o-icon-parent--form-item:hover &,
@@ -226,7 +226,7 @@
       left: 50%;
       width: setting.f-space-em(xs);
       height: setting.f-space-em(xs);
-      background: var(--c-bg-tertiary);
+      background: var(--c-bg-qua);
       border-radius: 50%;
       transform: translate(-50%, -50%);
     }
@@ -241,7 +241,7 @@
         left: 50%;
         width: setting.f-font-emsize(2xs);
         height: calc(setting.f-font-emsize(2xs) / 2);
-        border-color: var(--c-bg-tertiary);
+        border-color: var(--c-bg-qua);
         border-style: solid;
         border-width: 0 0 2px 2px;
         transform: translate(-50%, -50%) rotate(-45deg);

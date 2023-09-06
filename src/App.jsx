@@ -1312,7 +1312,7 @@ function App() {
                   </span>
                   <h3 class="c-card-link">サンプルタイトル</h3>
                   <span className="c-content-m">
-                    どうか、まあおとりくださいジョバンニは坊ちゃんといわれたので、光る粒すなわち星しか見えないでしょう。ふりかえって見ると、ちょうど水が深いほど青く見えるように、ちらちらゆれたり顫えたりしました。
+                    どうか、まあおとりくださいジョバンニは坊ちゃんといわれたので、光る粒すなわち星しか見えないでしょう。ふりかえって見ると、ちょうど水が深いほど青く見える
                   </span>
                 </span>
               </a>
@@ -1341,7 +1341,7 @@ function App() {
                   </span>
                   <h3 class="c-card-link">サンプルタイトル</h3>
                   <span className="c-content-m">
-                    どうか、まあおとりくださいジョバンニは坊ちゃんといわれたので、光る粒すなわち星しか見えないでしょう。ふりかえって見ると、ちょうど水が深いほど青く見えるように、ちらちらゆれたり顫えたりしました。
+                    どうか、まあおとりくださいジョバンニは坊ちゃんといわれたので、光る粒すなわち星しか見えないでしょう。ふりかえって見ると、ちょうど水が深いほど青く見える
                   </span>
                 </span>
               </a>
@@ -1370,7 +1370,7 @@ function App() {
                   </span>
                   <h3 class="c-card-link">サンプルタイトル</h3>
                   <span className="c-content-m">
-                    どうか、まあおとりくださいジョバンニは坊ちゃんといわれたので、光る粒すなわち星しか見えないでしょう。ふりかえって見ると、ちょうど水が深いほど青く見えるように、ちらちらゆれたり顫えたりしました。
+                    どうか、まあおとりくださいジョバンニは坊ちゃんといわれたので、光る粒すなわち星しか見えないでしょう。ふりかえって見ると、ちょうど水が深いほど青く見える
                   </span>
                 </span>
               </a>
@@ -1399,7 +1399,7 @@ function App() {
                   </span>
                   <h3 class="c-card-link">サンプルタイトル</h3>
                   <span className="c-content-m">
-                    どうか、まあおとりくださいジョバンニは坊ちゃんといわれたので、光る粒すなわち星しか見えないでしょう。ふりかえって見ると、ちょうど水が深いほど青く見えるように、ちらちらゆれたり顫えたりしました。
+                    どうか、まあおとりくださいジョバンニは坊ちゃんといわれたので、光る粒すなわち星しか見えないでしょう。ふりかえって見ると、ちょうど水が深いほど青く見える
                   </span>
                 </span>
               </a>
@@ -1428,7 +1428,303 @@ function App() {
                   </span>
                   <h3 class="c-card-link">サンプルタイトル</h3>
                   <span className="c-content-m">
-                    どうか、まあおとりくださいジョバンニは坊ちゃんといわれたので、光る粒すなわち星しか見えないでしょう。ふりかえって見ると、ちょうど水が深いほど青く見えるように、ちらちらゆれたり顫えたりしました。
+                    どうか、まあおとりくださいジョバンニは坊ちゃんといわれたので、光る粒すなわち星しか見えないでしょう。ふりかえって見ると、ちょうど水が深いほど青く見える
+                  </span>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <h3 className="c-sec-heading">新着記事</h3>
+          <ul className="o-stack o-stack--l">
+            <li>
+              <a href="#" className="o-sidebar o-box o-box--bg-fill o-box--blog-card">
+                <span className="o-sidebar__narrow">
+                  <picture className="o-frame o-frame--square">
+                    <source type="image/avif" srcSet="img/thumb.avif" />
+                    <source type="image/webp" srcSet="img/thumb.webp" />
+                    <img
+                      src="img/thumb.png"
+                      width="100%"
+                      height="100%"
+                      loading="lazy"
+                      decoding="async"
+                      fetchpriority="low"
+                      alt=""
+                    />
+                  </picture>
+                </span>
+                <span className="o-sidebar__wide o-box o-box--card-inner o-stack o-stack--m">
+                  <span class="o-cluster o-cluster--middle">
+                    <time class="c-content-l c-number-text-variant u-txt-weight-b">2023.00.00</time>
+                    <span class="o-box o-box--cat">category</span>
+                  </span>
+                  <h3 class="c-card-link">サンプルタイトル</h3>
+                  <span className="c-content-m">
+                    どうか、まあおとりくださいジョバンニは坊ちゃんといわれたので、光る粒すなわち星しか見えないでしょう。ふりかえって見ると、ちょうど水が深いほど青く見える
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#" className="o-sidebar o-box o-box--bg-fill o-box--blog-card">
+                <span className="o-sidebar__narrow">
+                  <picture className="o-frame o-frame--square">
+                    <source type="image/avif" srcSet="img/thumb.avif" />
+                    <source type="image/webp" srcSet="img/thumb.webp" />
+                    <img
+                      src="img/thumb.png"
+                      width="100%"
+                      height="100%"
+                      loading="lazy"
+                      decoding="async"
+                      fetchpriority="low"
+                      alt=""
+                    />
+                  </picture>
+                </span>
+                <span className="o-sidebar__wide o-box o-box--card-inner o-stack o-stack--m">
+                  <span class="o-cluster o-cluster--middle">
+                    <time class="c-content-l c-number-text-variant u-txt-weight-b">2023.00.00</time>
+                    <span class="o-box o-box--cat">category</span>
+                  </span>
+                  <h3 class="c-card-link">サンプルタイトル</h3>
+                  <span className="c-content-m">
+                    どうか、まあおとりくださいジョバンニは坊ちゃんといわれたので、光る粒すなわち星しか見えないでしょう。ふりかえって見ると、ちょうど水が深いほど青く見える
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#" className="o-sidebar o-box o-box--bg-fill o-box--blog-card">
+                <span className="o-sidebar__narrow">
+                  <picture className="o-frame o-frame--square">
+                    <source type="image/avif" srcSet="img/thumb.avif" />
+                    <source type="image/webp" srcSet="img/thumb.webp" />
+                    <img
+                      src="img/thumb.png"
+                      width="100%"
+                      height="100%"
+                      loading="lazy"
+                      decoding="async"
+                      fetchpriority="low"
+                      alt=""
+                    />
+                  </picture>
+                </span>
+                <span className="o-sidebar__wide o-box o-box--card-inner o-stack o-stack--m">
+                  <span class="o-cluster o-cluster--middle">
+                    <time class="c-content-l c-number-text-variant u-txt-weight-b">2023.00.00</time>
+                    <span class="o-box o-box--cat">category</span>
+                  </span>
+                  <h3 class="c-card-link">サンプルタイトル</h3>
+                  <span className="c-content-m">
+                    どうか、まあおとりくださいジョバンニは坊ちゃんといわれたので、光る粒すなわち星しか見えないでしょう。ふりかえって見ると、ちょうど水が深いほど青く見える
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#" className="o-sidebar o-box o-box--bg-fill o-box--blog-card">
+                <span className="o-sidebar__narrow">
+                  <picture className="o-frame o-frame--square">
+                    <source type="image/avif" srcSet="img/thumb.avif" />
+                    <source type="image/webp" srcSet="img/thumb.webp" />
+                    <img
+                      src="img/thumb.png"
+                      width="100%"
+                      height="100%"
+                      loading="lazy"
+                      decoding="async"
+                      fetchpriority="low"
+                      alt=""
+                    />
+                  </picture>
+                </span>
+                <span className="o-sidebar__wide o-box o-box--card-inner o-stack o-stack--m">
+                  <span class="o-cluster o-cluster--middle">
+                    <time class="c-content-l c-number-text-variant u-txt-weight-b">2023.00.00</time>
+                    <span class="o-box o-box--cat">category</span>
+                  </span>
+                  <h3 class="c-card-link">サンプルタイトル</h3>
+                  <span className="c-content-m">
+                    どうか、まあおとりくださいジョバンニは坊ちゃんといわれたので、光る粒すなわち星しか見えないでしょう。ふりかえって見ると、ちょうど水が深いほど青く見える
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#" className="o-sidebar o-box o-box--bg-fill o-box--blog-card">
+                <span className="o-sidebar__narrow">
+                  <picture className="o-frame o-frame--square">
+                    <source type="image/avif" srcSet="img/thumb.avif" />
+                    <source type="image/webp" srcSet="img/thumb.webp" />
+                    <img
+                      src="img/thumb.png"
+                      width="100%"
+                      height="100%"
+                      loading="lazy"
+                      decoding="async"
+                      fetchpriority="low"
+                      alt=""
+                    />
+                  </picture>
+                </span>
+                <span className="o-sidebar__wide o-box o-box--card-inner o-stack o-stack--m">
+                  <span class="o-cluster o-cluster--middle">
+                    <time class="c-content-l c-number-text-variant u-txt-weight-b">2023.00.00</time>
+                    <span class="o-box o-box--cat">category</span>
+                  </span>
+                  <h3 class="c-card-link">サンプルタイトル</h3>
+                  <span className="c-content-m">
+                    どうか、まあおとりくださいジョバンニは坊ちゃんといわれたので、光る粒すなわち星しか見えないでしょう。ふりかえって見ると、ちょうど水が深いほど青く見える
+                  </span>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <h3 className="c-sec-heading">よく読まれている記事</h3>
+          <ul className="o-stack o-stack--l">
+            <li>
+              <a href="#" className="o-sidebar o-box o-box--bg-fill o-box--blog-card">
+                <span className="o-sidebar__narrow">
+                  <picture className="o-frame o-frame--square">
+                    <source type="image/avif" srcSet="img/thumb.avif" />
+                    <source type="image/webp" srcSet="img/thumb.webp" />
+                    <img
+                      src="img/thumb.png"
+                      width="100%"
+                      height="100%"
+                      loading="lazy"
+                      decoding="async"
+                      fetchpriority="low"
+                      alt=""
+                    />
+                  </picture>
+                </span>
+                <span className="o-sidebar__wide o-box o-box--card-inner o-stack o-stack--m">
+                  <span class="o-cluster o-cluster--middle">
+                    <time class="c-content-l c-number-text-variant u-txt-weight-b">2023.00.00</time>
+                    <span class="o-box o-box--cat">category</span>
+                  </span>
+                  <h3 class="c-card-link">サンプルタイトル</h3>
+                  <span className="c-content-m">
+                    どうか、まあおとりくださいジョバンニは坊ちゃんといわれたので、光る粒すなわち星しか見えないでしょう。ふりかえって見ると、ちょうど水が深いほど青く見える
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#" className="o-sidebar o-box o-box--bg-fill o-box--blog-card">
+                <span className="o-sidebar__narrow">
+                  <picture className="o-frame o-frame--square">
+                    <source type="image/avif" srcSet="img/thumb.avif" />
+                    <source type="image/webp" srcSet="img/thumb.webp" />
+                    <img
+                      src="img/thumb.png"
+                      width="100%"
+                      height="100%"
+                      loading="lazy"
+                      decoding="async"
+                      fetchpriority="low"
+                      alt=""
+                    />
+                  </picture>
+                </span>
+                <span className="o-sidebar__wide o-box o-box--card-inner o-stack o-stack--m">
+                  <span class="o-cluster o-cluster--middle">
+                    <time class="c-content-l c-number-text-variant u-txt-weight-b">2023.00.00</time>
+                    <span class="o-box o-box--cat">category</span>
+                  </span>
+                  <h3 class="c-card-link">サンプルタイトル</h3>
+                  <span className="c-content-m">
+                    どうか、まあおとりくださいジョバンニは坊ちゃんといわれたので、光る粒すなわち星しか見えないでしょう。ふりかえって見ると、ちょうど水が深いほど青く見える
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#" className="o-sidebar o-box o-box--bg-fill o-box--blog-card">
+                <span className="o-sidebar__narrow">
+                  <picture className="o-frame o-frame--square">
+                    <source type="image/avif" srcSet="img/thumb.avif" />
+                    <source type="image/webp" srcSet="img/thumb.webp" />
+                    <img
+                      src="img/thumb.png"
+                      width="100%"
+                      height="100%"
+                      loading="lazy"
+                      decoding="async"
+                      fetchpriority="low"
+                      alt=""
+                    />
+                  </picture>
+                </span>
+                <span className="o-sidebar__wide o-box o-box--card-inner o-stack o-stack--m">
+                  <span class="o-cluster o-cluster--middle">
+                    <time class="c-content-l c-number-text-variant u-txt-weight-b">2023.00.00</time>
+                    <span class="o-box o-box--cat">category</span>
+                  </span>
+                  <h3 class="c-card-link">サンプルタイトル</h3>
+                  <span className="c-content-m">
+                    どうか、まあおとりくださいジョバンニは坊ちゃんといわれたので、光る粒すなわち星しか見えないでしょう。ふりかえって見ると、ちょうど水が深いほど青く見える
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#" className="o-sidebar o-box o-box--bg-fill o-box--blog-card">
+                <span className="o-sidebar__narrow">
+                  <picture className="o-frame o-frame--square">
+                    <source type="image/avif" srcSet="img/thumb.avif" />
+                    <source type="image/webp" srcSet="img/thumb.webp" />
+                    <img
+                      src="img/thumb.png"
+                      width="100%"
+                      height="100%"
+                      loading="lazy"
+                      decoding="async"
+                      fetchpriority="low"
+                      alt=""
+                    />
+                  </picture>
+                </span>
+                <span className="o-sidebar__wide o-box o-box--card-inner o-stack o-stack--m">
+                  <span class="o-cluster o-cluster--middle">
+                    <time class="c-content-l c-number-text-variant u-txt-weight-b">2023.00.00</time>
+                    <span class="o-box o-box--cat">category</span>
+                  </span>
+                  <h3 class="c-card-link">サンプルタイトル</h3>
+                  <span className="c-content-m">
+                    どうか、まあおとりくださいジョバンニは坊ちゃんといわれたので、光る粒すなわち星しか見えないでしょう。ふりかえって見ると、ちょうど水が深いほど青く見える
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#" className="o-sidebar o-box o-box--bg-fill o-box--blog-card">
+                <span className="o-sidebar__narrow">
+                  <picture className="o-frame o-frame--square">
+                    <source type="image/avif" srcSet="img/thumb.avif" />
+                    <source type="image/webp" srcSet="img/thumb.webp" />
+                    <img
+                      src="img/thumb.png"
+                      width="100%"
+                      height="100%"
+                      loading="lazy"
+                      decoding="async"
+                      fetchpriority="low"
+                      alt=""
+                    />
+                  </picture>
+                </span>
+                <span className="o-sidebar__wide o-box o-box--card-inner o-stack o-stack--m">
+                  <span class="o-cluster o-cluster--middle">
+                    <time class="c-content-l c-number-text-variant u-txt-weight-b">2023.00.00</time>
+                    <span class="o-box o-box--cat">category</span>
+                  </span>
+                  <h3 class="c-card-link">サンプルタイトル</h3>
+                  <span className="c-content-m">
+                    どうか、まあおとりくださいジョバンニは坊ちゃんといわれたので、光る粒すなわち星しか見えないでしょう。ふりかえって見ると、ちょうど水が深いほど青く見える
                   </span>
                 </span>
               </a>

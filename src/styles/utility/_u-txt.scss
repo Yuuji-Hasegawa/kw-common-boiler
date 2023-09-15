@@ -78,3 +78,21 @@
   text-underline-offset: -0.2em;
   text-decoration-skip-ink: none;
 }
+
+.u-text-trim {
+  display: -webkit-box;
+
+  --trim: 1;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--trim);
+  overflow: hidden;
+
+  &--two-line {
+    --trim: 2;
+  }
+
+  &--three-line {
+    --trim: 3;
+  }
+}

@@ -57,10 +57,6 @@
     }
   }
 
-  &--bordered {
-    border: solid 1px var(--c-border-field);
-  }
-
   &--no-color {
     > * {
       filter: grayscale(100%);

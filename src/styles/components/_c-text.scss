@@ -76,10 +76,6 @@
   text-decoration: underline;
   transition: all 0.25s ease;
 
-  &--no-underline {
-    text-decoration: none;
-  }
-
   &:visited {
     color: var(--c-text-visited);
   }
@@ -92,6 +88,10 @@
 }
 
 .c-text-link {
+  &--no-underline {
+    text-decoration: none;
+  }
+
   &--full-wide {
     display: block;
     word-break: break-word;
@@ -100,8 +100,18 @@
 }
 
 .c-card-link {
+  display: -webkit-box;
+  overflow: hidden;
   color: var(--c-text-body);
   transition: all 0.25s ease;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--trim);
+
+  --trim: 2;
+
+  &--one-line {
+    --trim: 1;
+  }
 
   .o-box--blog-card:visited & {
     color: var(--c-text-visited);

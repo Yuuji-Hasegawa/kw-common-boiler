@@ -1,69 +1,75 @@
 import { Stack } from "./Stack";
 
 export default {
-  title: "Example/Stack",
+  title: "Object/Stack",
   component: Stack,
   tags: ["autodocs"],
   argTypes: {
-    size: {
+    modifier: {
       control: {
         type: "radio",
       },
-      options: ["3xs", "2xs", "xs", "s", "m", "l", "xl", "2xl", "3xl"],
+      options: ["3xs", "2xs", "xs", "s", "m", "l", "xl", "2xl", "3xl", "4xl"],
     },
   },
 };
 
 export const XXXS = {
   args: {
-    size: "3xs",
+    modifier: "3xs",
   },
 };
 
 export const XXS = {
   args: {
-    size: "2xs",
+    modifier: "2xs",
   },
 };
 
 export const XS = {
   args: {
-    size: "xs",
+    modifier: "xs",
   },
 };
 
 export const S = {
   args: {
-    size: "s",
+    modifier: "s",
   },
 };
 
 export const M = {
   args: {
-    size: "m",
+    modifier: "m",
   },
 };
 
 export const L = {
   args: {
-    size: "l",
+    modifier: "l",
   },
 };
 
 export const XL = {
   args: {
-    size: "xl",
+    modifier: "xl",
   },
 };
 
 export const XXL = {
   args: {
-    size: "2xl",
+    modifier: "2xl",
   },
 };
 
 export const XXXL = {
   args: {
-    size: "3xl",
+    modifier: "3xl",
+  },
+};
+
+export const XXXXL = {
+  args: {
+    modifier: "4xl",
   },
 };

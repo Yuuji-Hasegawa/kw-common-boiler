@@ -1,10 +1,9 @@
 import styles from "../styles/components/pager-btn.module.scss";
-import { IconPrev } from "./IconPrev.jsx";
-import { IconNext } from "./IconNext.jsx";
+import { IconPrev } from "./IconPrev";
+import { IconNext } from "./IconNext";
 
 export const Pager = () => {
   return (
-    <nav className="o-center u-mt-m u-mb-m" aria-label="Pagination">
       <ol className={["o-cluster o-cluster--center", `${styles.pager}`].join(" ")}>
         <li>
           <a href="#" className="o-box o-box--button o-box--square-button" aria-label="Previous">
@@ -42,6 +41,5 @@ export const Pager = () => {
           </a>
         </li>
       </ol>
-    </nav>
   );
 };

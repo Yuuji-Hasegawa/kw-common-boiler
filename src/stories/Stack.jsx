@@ -2,28 +2,25 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../styles/objects/_o-stack.scss";
 
-/**
- * 縦積みする要素の基本オブジェクト<br />
- * .o-stack + .o-stack--modifier で隙間を調整して使う
- */
-
-export const Stack = ({ size }) => {
+export const Stack = ({ modifier }) => {
   return (
-    <div className={["o-stack", `o-stack--${size}`].join(" ")}>
+    <div className={["o-stack", `o-stack--${modifier}`].join(" ")}>
       <div>Child 1</div>
       <div>Child 2</div>
+      <div>Child 3</div>
+      <div>Child 4</div>
+      <div>Child 5</div>
     </div>
   );
 };
 
 Stack.propTypes = {
   /**
-   * 縦積みにした時の隙間。<br />
-   * styles/settings/_sizes.scss 内の $spacePx と連動。
+   * 間隔の指定
    */
-  size: PropTypes.oneOf(["3xs", "2xs", "xs", "s", "m", "l", "xl", "2xl", "3xl"]),
+  modifier: PropTypes.oneOf(["3xs", "2xs", "xs", "s", "m", "l", "xl", "2xl", "3xl", "4xl"]),
 };
 
 Stack.defaultProps = {
-  size: "m",
+  modifier: null,
 };

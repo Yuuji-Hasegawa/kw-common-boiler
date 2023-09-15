@@ -9,6 +9,13 @@
   outline-offset: -1px;
   transition: all 0.25s ease;
 
+  &--cta {
+    padding-bottom: 4rem;
+    color: var(--c-text-on-fill);
+    background: var(--c-button-normal);
+    border-color: transparent;
+  }
+
   &--bordered {
     border: solid 1px var(--c-border-field);
   }
@@ -54,6 +61,10 @@
       outline-style: solid;
       outline-color: var(--c-button-normal);
     }
+  }
+
+  &--blog-card {
+    height: 100%;
   }
 
   &--blog-embed {
@@ -251,5 +262,15 @@
 
   &--share {
     padding-left: calc(setting.f-space-em(m) + setting.f-space-px(m));
+  }
+
+  &--menu-btn {
+    margin-left: auto;
+    background: transparent;
+    border-color: var(--c-border-divider);
+
+    @include tool.min-screen(setting.$breakm) {
+      display: none;
+    }
   }
 }

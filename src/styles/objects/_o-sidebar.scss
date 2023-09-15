@@ -55,4 +55,15 @@
   &__wide {
     min-width: 50%;
   }
+
+  &__footLeft {
+    flex-basis: setting.breakpoints(unders);
+    min-width: fit-content;
+  }
+
+  &__footRight {
+    min-width: min(setting.breakpoints(unders), 100%);
+    padding-top: min(setting.breakpoints(overs), setting.f-space-px(l));
+    margin-left: auto;
+  }
 }
